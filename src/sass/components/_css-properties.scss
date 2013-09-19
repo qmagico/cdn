@@ -1,0 +1,102 @@
+//positions
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+//font properties
+
+.normal {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center !important;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-justify {
+    text-align: justify;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+//displays
+
+.display-block{
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.display-inline-table {
+    display: inline-table;
+}
+
+.display-list-item {
+    display: list-item;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-table {
+    display: table;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+//h1
+.small-h1 {
+    font-size: 14px;
+}
+
+.mid-h1{
+    font-size: 18px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+// no padding
+
+.no-padding {
+    padding: 0 !important;
+}
+
+// center with margin
+.margin-center {
+    margin: 0 auto;
+}

@@ -1,0 +1,22 @@
+@import "components/library/materials";
+
+// General styling for the library section
+
+.library-panel {
+  padding: 5px 10px;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 90px;
+  }
+}
+
+// The wrapper for making the boxes fluid
+.library-panel > .fluid-box-wrapper {
+  padding: 15px 10px;
+  max-width: 300px;
+  @include fluid-boxes(220px, 300px, 30px);
+}

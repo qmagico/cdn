@@ -1,0 +1,23 @@
+body.qm-page { 
+	background: @grayBar;
+}
+
+.qm-error {
+	width: 970px;
+	margin: 200px auto;
+	color: #999999;
+	font-size: 13px;
+
+	.title {
+		font-size: 34px;
+		margin-bottom: 25px;
+	}
+
+	&:before {
+		content: url(/static/img/error-sign.png);
+		float: left;
+		margin-right: 40px;
+		margin-top: -100px;
+		vertical-align: -100px;
+	}
+}

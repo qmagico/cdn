@@ -1,0 +1,341 @@
+@import "qmagico/qm-fix.less";
+@import "qmagico/qm-animations.less";
+@import "qmagico/qm-mixins.less";
+@import "qmagico/qm-library.less";
+@import "qmagico/qm-content-view.less";
+@import "qmagico/qm-admin.less";
+@import "qmagico/qm-nav.less";
+@import "qmagico/qm-variables.less";
+@import "qmagico/qm-breadcrumbs.less";
+@import "qmagico/qm-footer.less";
+@import "qmagico/qm-schoolclasses.less";
+@import "qmagico/qm-common.less";
+@import "qmagico/qm-sidebar.less";
+@import "qmagico/qm-icons.less";
+@import "qmagico/qm-edit-windows.less";
+@import "qmagico/qm-profile.less";
+@import "qmagico/qm-pages.less";
+@import "qmagico/qm-landing.less";
+@import "qmagico/qm-dropdown.less";
+@import "qmagico/qm-editor.less";
+@import "qmagico/qm-modals.less";
+@import "qmagico/qm-wizard.less";
+@import "qmagico/qm-stats.less";
+@import "qmagico/qm-soon.less";
+@import "qmagico/qm-forms.less";
+
+// QMAGICO
+// ---------
+
+// Parent container
+.qmagico-perfil-photo {
+	position: absolute; // fix for Mac
+}
+
+.qmagico-photo {
+	border: 1px solid #97CACE;
+}
+.qmagico-photo-performance {
+	border: 1px solid #CCCCCC;
+	margin-right: 7px;
+	margin-left: -8px;
+}
+
+html, body { height: 100%; }
+
+body {
+	.box-sizing(border-box);
+	padding-top: 57px;
+	padding-left: 118px;
+	overflow-x: auto;
+	background: @grayBar;
+	min-width: @qmagico-min-width;
+	background-image: url(/static/img/tab-background.png);
+	background-repeat: repeat-y;
+}
+
+.qmagico-side-column {
+	margin-top:	11px;
+	margin-right: 10px;
+}
+
+.qmagico-side-info {
+	.qmagico-side-column;
+    padding-bottom: 10px;
+}
+
+.qmagico-side-info-title {
+	text-align: center;
+	border-width: 1px 1px 0 1px;
+	border-color: @qmagicoGrayBorder;
+	border-style: solid;
+	.box-shadow(~"inset 0px 1px 0px rgba(255,255,255,.5), 0px 0px 0px rgba(0,0,0,.2)");
+	#gradient > .vertical(#F5F5F7, #EEEEF2);
+	font-weight: bold;
+	padding: 10px;
+}
+
+span.tag {
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 4px;
+  background-color: #EEE;
+  padding: 5px;
+  display: inline-block;
+  margin: 1px;
+  margin-right: 2px;
+  cursor: pointer;
+  a.close {
+    font-size: 10px;
+    float: none;
+  }
+}
+
+div.content-box {
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 4px;
+  display: table;
+  margin-bottom: 7px;
+  padding: 5px;
+  &.selected {
+    background-color: peachpuff;
+  }
+}
+
+
+.qmagico-side-info-content {
+	background-color: white;
+	border: 1px solid @qmagicoGrayBorder;
+	padding: 7px 5px 0px 10px;
+    .nested {
+        margin-left: 40px;
+        border-left: 1px dotted #ccc;
+    }
+
+    span.qmagico-tags-container {
+        display: inline-block;
+    }
+
+    span.content-box {
+        border: 1px solid rgb(153, 153, 153);
+        border-radius: 4px;
+        display: table;
+        margin-bottom: 7px;
+        &.selected {
+            background-color: peachpuff;
+        }
+    }
+
+    span.content {
+        border: 1px solid rgb(153, 153, 153);
+        border-radius: 4px;
+        padding: 5px;
+        cursor: pointer;
+        margin: 2px;
+        display: inline-block;
+        background-color: ghostwhite;
+    }
+}
+
+.qmagico-side-info-content-no-padding {
+	background-color: white;
+	border: 1px solid @qmagicoGrayBorder;
+}
+
+.qmagico-autocomplete-ul {
+	position: absolute;
+	list-style:none;
+	clear: left;
+	margin: 0;
+	top: 41px !important;
+	display:block;
+	float: left;
+	.box-shadow(-3px 3px 0 rgba(0,0,0,.1));
+	padding: 0px;
+	border: 1px solid #CCC;
+	background: white;
+	width: 337px !important;
+	a, a:hover, a:visited {
+		text-decoration: none;
+		display:block;
+		cursor: default;
+		color: #333333;
+	}
+	.qmagico-autocomplete-li {
+		border-bottom: 1px solid #CCC;
+		height: 55px;
+	}
+
+
+	.qmagico-autocomplete-li:hover {
+		background-color: #FEFCEC;
+	}
+
+	.qmagico-autocomplete-middle-div {
+		height: 55px;
+		display: table-cell;
+		vertical-align: middle;
+
+		.qmagico-autocomplete-photo {
+			display: inline-block;
+			padding-left: 8px;
+			float: left;
+			line-height: 1px;
+			img {
+				vertical-align: initial;
+			}
+		}
+
+		.qmagico-autocomplete-text {
+			display: inline-block;
+			padding-left: 10px;
+			font-size: 12px;
+			float: left;
+
+			.qmagico-autocomplete-text-top {
+				color: @qmagicoFooterLink;
+				font-weight: bold;
+				line-height: 18px;
+			}
+
+			.qmagico-autocomplete-text-bottom  {
+				line-height: 18px;
+			}
+
+			.qmagico-autocomplete-text-middle {
+				padding-top: 11px;
+			}
+		}
+	}
+
+	.qmagico-autocomplete-category-li {
+		background-image: url(/static/img/dropdown-menu-bottom.png);
+		background-position: left top;
+		height: 24px;
+		text-align: left;
+		border-bottom: 1px solid #CCC;
+		background-size: contain;
+		-moz-background-size: contain;
+		div {
+			display: table-cell;
+			color: @qmagicoCategory;
+			width: 337px;
+			vertical-align: middle;
+			height: 24px;
+			padding-left: 10px;
+			text-shadow: 0 1px rgba(255,255,255,.70);
+			font-weight: bold;
+			font-size: 11px;
+			text-transform: uppercase;
+		}
+	}
+
+	.qmagico-autocomplete-bottom-li {
+		background-image: url(/static/img/dropdown-menu-bottom.png);
+		background-position: left top;
+		height: 33px;
+		text-align: center;
+		div {
+			display: table-cell;
+			width: 337px;
+			vertical-align: middle;
+			height: 33px;
+			a {
+				.qm-inline-block;
+				padding-left: 5px;
+				color: @qmagicoAutocompleteBot;
+				font-size: 11px;
+				text-shadow: 0 1px rgba(255,255,255,.70);
+			}
+			a:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.qmagico-class-search {
+	border: 1px solid @qmagicoGrayBorder;
+	.qmagico-title {
+		.qmagico-side-info-title;
+		text-align: left;
+		text-shadow: 0 1px rgba(255,255,255,.70);
+	}
+	.qmagico-title {
+		border-width: 0 0 1px 0px;
+		font-size: 14px;
+	}
+	.qmagico-search {
+		background: @white;
+		width: 100%;
+		height: 40px;
+		border-bottom: 1px solid @qmagicoGrayBorder;
+
+		input[type="text"] {
+			border: 0;
+			.box-shadow(none);
+			font-size: 14px;
+			padding: 0;
+			width: 90%;
+			margin: 10px;
+		}
+		input[type="image"] {
+			width: 14px;
+			height: 15px;
+			float: right;
+			margin: 15px;
+		}
+	}
+	.qmagico-list {
+		background-image: url(/static/img/estude-back.png);
+		margin: 0;
+		padding: 5px 10px;
+	}
+	.qmagico-class {
+		margin: 10px 5px;
+		.border-radius(5px);
+		border: 1px solid @qmagicoGrayBorder;
+		padding: 15px;
+		background: @white;
+		.box-shadow(~"1px 1px 1px rgba(0, 0, 0, .15)");
+		text-shadow: 0 1px rgba(255,255,255,.70);
+		font-size: 12px;
+
+		.btn {
+			float: right;
+			margin-top: -6px;
+			font-weight: bold;
+		}
+
+		.class-title {
+			color: #3F848B;
+			font-weight: bold;
+			padding-right: 10px;
+		}
+
+		.class-student-number {
+			font-weight: bold;
+			color: @grayLight;
+		}
+
+		.class-students {
+			display: none;
+
+			ul {
+				list-style-type: none;
+				margin: 10px 0 0 0;
+			}
+
+			li {
+				.qm-inline-block;
+				padding-right: 5px;
+			}
+		}
+	}
+}
+
+// Tooltip tweak
+
+.tooltip-inner img {
+	margin-top: -3px;
+}

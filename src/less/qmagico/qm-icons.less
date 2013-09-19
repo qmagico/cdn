@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "FontAwesome";
+  src: url('../fonts/font-awesome.eot');
+  src: url('../fonts/font-awesome.eot?#iefix') format('eot'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/FontAwesome.otf') format('opentype'), url('../fonts/fontawesome-webfont.svg') format('svg');
+}
+
+.icn {
+	font-family: "FontAwesome";
+	-webkit-font-smoothing: antialiased;
+
+	&:before {
+		font-size: 13px;
+		font-style: normal;
+		font-weight: normal;
+	}
+}
+
+.icn-cog:before {
+	content: "\f013";
+}
+
+.icn-star:before {
+	content: "\f005";
+}
+
+.icn-pencil:before {
+	content: "\f040";
+}
+
+.icn-plus:before {
+	content: "\f067";
+}
+
+.icn-minus:before {
+	content: "\f068";
+}
+
+.icn-reply:before {
+	content: "\f112";
+}
+
+.icn-vellipsis:before {
+	content: "\f142";
+}
+
+
+// images
+
+.qm-icon {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.qm-icon-return {
+	.qm-icon;
+	width: 16px;
+	height: 11px;
+	background-image: url(/static/img/content-return.png);
+	margin: 3px;
+}
+
+.qm-icon-x {
+	.qm-icon;
+	width: 8px;
+	height: 8px;
+	background-image: url(/static/img/x-sign.png);
+	display: inline-block;
+}
+
+
+.qm-icon-checked {
+    .qm-icon;
+    width: 9px;
+    height: 9px;
+    background-image: url(/static/img/library-checked.png);
+}
+
+.qm-icon-minus {
+	.qm-icon;
+	width: 9px;
+	height: 9px;
+	background-image: url(/static/img/library-minus.png);
+}
+
+.qm-icon-plus {
+	.qm-icon;
+	width: 11px;
+	height: 11px;
+	background-image: url(/static/img/plus-sign.png);
+}
+
+.qm-icon-pen {
+	.qm-icon;
+	width: 15px;
+	height: 14px;
+	background-image: url(/static/img/icon-pen.png);
+}
+
+.qm-icon-trash {
+	.qm-icon;
+	background-image: url(/static/img/library-trash-icon-white.png);
+	background-repeat: no-repeat;
+	width: 13px;
+	height: 16px;
+
+	&.disabled { background-image: url(/static/img/library-trash-disabled.png) !important; }
+
+}
+
+.qm-icon-hat {
+	.qm-icon;
+	.qm-inline-block;
+	background-image: url(/static/img/icon-hat.png);
+	background-repeat: no-repeat;
+	background-position: center 3px;
+	width: 16px;
+	height: 16px;
+	vertical-align: -2px;
+}
+
+.qm-icon-ok {
+	.qm-icon;
+	width: 9px;
+	height: 8px;
+	background-image: url(/static/img/icon-ok.png);
+}
+
+.qm-icon-working-time{
+	background-image: url(/static/img/working-time.png);
+	background-repeat: no-repeat;
+    height: 16px;
+    width: 13px;
+
+}
+
+.qm-icon-working-time-remaining{
+	background-image: url(/static/img/working-time-remaining.png);
+	background-repeat: no-repeat;
+    height: 16px;
+    width: 13px;
+}
+
+.qm-arrow-limit-time{
+	background-image: url(/static/img/arrow-limit-time.png);
+	background-repeat: no-repeat;
+	height: 16px;
+    width: 16px;
+}
+
+.qm-arrow-limit-time-remaining{
+	background-image: url(/static/img/arrow-limit-time-remaining.png);
+	background-repeat: no-repeat;
+	height: 16px;
+    width: 16px;
+}

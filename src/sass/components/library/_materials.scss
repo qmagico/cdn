@@ -1,0 +1,140 @@
+// Styling for the displays of materials (either boxes or list)
+
+$library: sprite-map("library/materials/*.png", $library-folderbg-repeat: repeat-x, $library-contentbg-repeat: repeat-x,
+                     $library-contentbg-hover-repeat: repeat-x);
+
+// The box representing the link of the material
+// Use the .material-(folder|video|text|exercise) to style
+// the box according to the type of material
+.material-box {
+  display: block;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  height: 96px;
+  max-height: 96px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(#000, .18), inset 0 1px 0 rgba(#fff, .5);
+  border-radius: 3px;
+
+  & > .progress {
+    background: #346269;
+    height: 3px;
+    position: absolute;
+    top: 64px;
+  }
+}
+
+.material-box-top {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 15px 0 60px;
+  width: 100%;
+  word-break: break-word;
+  font-size: 13px;
+  height: 67px;
+  border-radius: 3px 3px 0 0;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    background: sprite-url($library) no-repeat;
+  }
+}
+
+.material-box-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 29px;
+  line-height: 29px;
+  font-size: 12px;
+  padding-left: 30px;
+  background: sprite-url($library) repeat-x;
+  box-shadow: inset 0 1px 2px rgba(#000, .12);
+}
+
+
+// Styling for the boxes actions (the cog with a dropdown)
+
+.material-box-actions {
+  background: linear-gradient(#46868e, #4a8b95);
+  box-shadow: inset 1px 0 0 #4f9da6, inset 0 1px 2px rgba(#000, .12);
+  border-radius: 0 0 3px 0;
+  width: 30px;
+  height: 29px;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+}
+
+.material-box-actions-menu {
+  top: 0;
+  left: 29px;
+  right: 0;
+}
+
+// Style of the folder box
+
+.material-folder {
+  background: linear-gradient(#fcee8c, #fdf2a7);
+  color: #333;
+  text-shadow: 0 1px 0 rgba(#fff, .7);
+
+  & > .material-box-top:before {
+    background-position: sprite-position($library, folder-icon);
+    @include sprite-dimensions($library, folder-icon);
+  }
+
+  & > .material-box-bottom {
+    color: #333;
+    border-top: 1px solid #ccbe5b;
+    background-position: sprite-position($library, folderbg);
+    border-radius: 0 0 3px 3px;
+  }
+}
+
+// General style of the video, exercise and text
+.material-video, .material-exercise, .material-text {
+  background: linear-gradient(#88bec6, #62acb5);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(#000, .12);
+
+  & > .material-box-bottom {
+    background-position: sprite-position($library, contentbg);
+    text-shadow: 0 1px 0 rgba(#000, .4);
+  }
+
+  &:hover {
+    background: linear-gradient(#6badb6, #17828f);
+
+    & > .progress {
+      background: #003e48;
+    }
+
+    & > .material-box-bottom {
+      background-position: sprite-position($library, contentbg-hover);
+    }
+  }
+}
+
+// Include the icons for each type of material
+@each $type in video, exercise, text {
+  .material-#{$type} {
+    & > .material-box-top:before {
+      background-position: sprite-position($library, $type + -icon);
+      @include sprite-dimensions($library, $type + -icon);
+    }
+
+    @if $type != video {
+      &:hover > .material-box-top:before {
+        background-position: sprite-position($library, $type + -icon-hover);
+        @include sprite-dimensions($library, $type + -icon-hover);
+      }
+    }
+  }
+}

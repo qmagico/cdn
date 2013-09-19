@@ -1,0 +1,58 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@import "globals/variables";
+@import "globals/mixins";
+
+@import "components/icons";
+
+@include font-face($icon-font, font-files("fontawesome-webfont.woff", "fontawesome-webfont.ttf", "FontAwesome.otf",
+                                          "fontawesome-webfont.svg"), "font-awesome.eot");
+
+body {
+	margin: 0;
+	padding: 0;
+}
+div,
+ul,
+li {
+  @include box-sizing(border-box);
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.fluid-box-wrapper {
+  float: left;
+  display: inline-block;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+//content
+.content{
+	margin: 0 auto;
+    position: relative;
+    width: 980px;
+}
+
+.inner-content{
+	padding: 0 30px;
+}
+
+//action button
+.action-button{
+	color: $white;
+	border-radius: 3px;
+	display: inline;
+	font-size: 18px;
+	padding: 4px 13px;
+	background-color: #D13722;
+}

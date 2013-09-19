@@ -1,0 +1,330 @@
+// BUTTON STYLES
+// -------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+  display: inline-block;
+  .ie7-inline-block();
+  padding: 4px 10px 4px;
+  margin-bottom: 0; // For input.btn
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  *line-height: 20px;
+  color: @grayDark;
+  text-align: center;
+  text-shadow: 0 1px rgba(255,255,255,.70);
+  vertical-align: middle;
+  cursor: pointer;
+  .buttonBackground(#F5F5F7, #EFEFF3);
+  border: 1px solid @btnBorder;
+  border-bottom-color: darken(@white, 20%);
+  *border: 0; // Remove the border to prevent IE7's black border on input:focus
+  .border-radius(3.8px);
+  .ie7-restore-left-whitespace(); // Give IE7 some love
+  .box-shadow(~"inset 0 1px rgba(255,255,255,.6), inset 0 -1px #E1E1E6, 0 1px 2px rgba(0,0,0,.05)");
+}
+
+// Hover state
+.btn:hover {
+  color: @grayDark;
+  text-decoration: none;
+  background-color: darken(#F5F5F7, 4%);
+  *background-color: darken(#F5F5F7, 4%); /* Buttons in IE7 don't get borders, so darken on hover */
+  background-position: 0 -50px;
+
+  // transition is only when going to hover, otherwise the background
+  // behind the gradient (there for IE<=9 fallback) gets mismatched
+  .transition(background-color .1s linear);
+  .transition(background-position .1s linear);
+}
+
+// Focus state for keyboard and accessibility
+.btn:focus {
+  .tab-focus();
+}
+
+// Active state
+.btn.active,
+.btn:active {
+  background-color: darken(@white, 10%);
+  background-color: darken(@white, 15%) e("\9");
+  background-image: none;
+  outline: 0;
+  .box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+}
+
+// Disabled state
+.btn.disabled,
+.btn[disabled] {
+  cursor: default;
+  background-color: darken(@white, 10%);
+  background-image: none;
+  border: 1px solid @qmagicoGrayBorder;
+  .opacity(65);
+  .box-shadow(~"0 1px rgba(255,255,255,.6) inset");
+}
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #98BCC0 !important;
+}
+.btn-success.disabled,
+.btn-success[disabled]{
+  color: #8DB669 !important;
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  padding: 9px 14px;
+  font-size: @baseFontSize + 1px;
+  font-weight: bold;
+  line-height: normal;
+  .border-radius(3px);
+}
+.btn-large [class^="icon-"] {
+  margin-top: 1px;
+}
+
+// Library Trash
+.btn-library-trash{
+
+  &:before{
+    content: '';
+    width: 13px;
+    height: 16px;
+    background-image: url("/static/img/library-trash-icon-gray.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    height: 16px;
+    width: 16px;
+  }
+
+  &:hover{
+      #gradient > .vertical(#F14343, #D61010);
+      .transition(background-color .1s linear);
+      .box-shadow(~"0 1px rgba(255,255,255,.40) inset, 0 -1px #BB2525 inset  !important");
+
+      &:before{
+        background-image: url("/static/img/library-trash-icon-white.png");
+      }
+    }
+
+}
+a{
+  &.btn-library-trash{
+
+  }
+}
+
+a .btn-library-trash{
+
+}
+a.btn-library-trash{}
+// Small
+.btn-small {
+  padding: 5px 9px;
+  font-size: @baseFontSize - 2px;
+  line-height: @baseLineHeight - 2px;
+}
+.btn-small [class^="icon-"] {
+  margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+  padding: 2px 6px;
+  font-size: @baseFontSize - 2px;
+  line-height: @baseLineHeight - 4px;
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Set text color
+// -------------------------
+.btn-primary,
+.btn-primary:hover,
+.btn-warning,
+.btn-warning:hover,
+.btn-success,
+.btn-success:hover,
+.btn-info,
+.btn-info:hover,
+.btn-inverse,
+.btn-inverse:hover {
+  color: @grayDark;
+  text-shadow: 0 1px rgba(255,255,255,.70);
+  .box-shadow(none);
+}
+
+.btn-danger, .btn-danger:hover {
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .8);
+  .box-shadow(~"0 1px rgba(255,255,255,.4) inset, 0 -1px #BB2525 inset  !important");
+}
+
+.btn-danger-landing,
+.btn-danger-landing:hover {
+  color: white;
+  text-shadow: 0 -1px #9B0211;
+  .box-shadow(none);
+}
+
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-danger-landing.active,-
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active,
+.btm-library-trash {
+  color: rgba(255,255,255,.75);
+  .box-shadow(none);
+}
+
+.straight-border{
+  .border-radius(0);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn {
+  // reset here as of 2.0.3 due to Recess property order
+  border-color: #ccc;
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.15);
+}
+.btn-primary {
+  .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+  .box-shadow(~"inset 0 -1px #99CCD3, inset 0 1px #DEEFF1 !important");
+  border: 1px solid @qmagicoGrayBorder;
+}
+.btn-primary-white{
+  color: #64A5AC !important;
+  background-color: @white;
+  .qm-noise-bg-white;
+  .box-shadow(~"inset 0 -1px rgba(0,0,0,.07)");
+
+  &:hover{
+    background-color: @white;
+    .qm-noise-bg-white;
+    .box-shadow(~"inset 0 -1px rgba(0,0,0,.07)");
+  }
+}
+// Warning appears are orange
+.btn-warning {
+  .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+}
+// Danger and error appear as red
+.btn-danger {
+  .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+}
+
+//Buuton from Landin page
+.btn-danger-landing {
+  .buttonBackground(@btnDangerLandingBackground, @btnDangerLandingBackgroundHighlight);
+  padding: 9px 10px;
+  border-radius: 4px;
+}
+// Success appears as green
+.btn-success {
+  .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+  .box-shadow(~"0 1px rgba(255,255,255,.60) inset, 0 -1px #A7D766 inset !important");
+  border: 1px solid @qmagicoGrayBorder;
+}
+// Info appears as a neutral blue
+.btn-info {
+  .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+}
+// Inverse appears as dark gray
+.btn-inverse {
+  .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+}
+
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+  &.btn-large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.btn-small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+  &.btn-mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+  }
+}
+
+
+//cancel button
+.cancel-add-cont{
+  background-color: #E7E7EA;
+  #gradient > .vertical(#EAEAED, #E5E5E9);
+  .box-shadow(~'0 -1px #D7D7DC inset, 0 1px rgba(255,255,255,.3) inset');
+  font-size: 12px;
+  .border-radius(0);
+  margin-top: 7px;
+  margin-right: 7px;
+}
+
+//arrows Font Awesome
+.btn .icon-arrow-right,
+.btn .icon-arrow-left{
+  line-height: 17px;
+}
+
+//input file's button
+.btn-input-file{
+  overflow: hidden;
+  position: relative;
+  padding: 5px 10px;
+
+  input[type="file"] {
+    height: 100%;
+    left: -143px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+  direction: ltr;
+
+  > input[type='file'] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+}
+}

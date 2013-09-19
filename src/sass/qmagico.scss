@@ -1,0 +1,45 @@
+@import "base";
+
+html {
+  font-family: "Lucida Grande", Tahoma, Verdana, Arial;
+  font-size: 12px;
+}
+
+body {
+  min-width: $body-min-width;
+  background-color: $background-color;
+  padding: 77px 20px 20px 20px;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+.fluid-box-wrapper {
+  position: relative;
+}
+
+@import "partials/taskbar";
+@import "partials/sidebar";
+
+@import "components/backgrounds";
+@import "components/panels";
+@import "components/overlay";
+@import "components/buttons";
+@import "components/navigation";
+@import "components/breadcrumb";
+@import "components/notifications";
+@import "components/progress";
+@import "components/dropdown";
+@import "components/checkbox";
+@import "components/pagination";
+@import "components/boxes";
+@import "components/modal";
+@import "components/css-properties";
+@import "components/tables";
+@import "components/html";
+@import "components/image-icon";
+
+@import "pages/library";
+@import "pages/exam";

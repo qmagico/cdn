@@ -1,0 +1,37 @@
+.panel {
+  border-radius: 3px;
+  border: 1px solid $border-color;
+}
+
+.panel-heading {
+  height: $heading-height;
+  line-height: $heading-height;
+  padding: 0 15px;
+  position: relative;
+  border-bottom: 1px solid $border-color;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(#fff, .7);
+  background: linear-gradient(top, #f5f5f7, #eeeef2);
+  box-shadow: inset 0 -1px 0 rgba(#e5e5eb, .8), inset 0 1px 0 rgba(#fff, .6);
+  border-radius: 3px 3px 0 0;
+}
+
+.panel-heading-actions {
+  float: right;
+  margin-top: -2px;
+  margin-right: -10px;
+  vertical-align: middle;
+
+  & > .btn {
+    border-radius: 0;
+  }
+}
+
+.panel-inner {
+}
+
+.panel-content {
+  @include clearfix;
+  position: relative;
+}

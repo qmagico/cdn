@@ -1,0 +1,790 @@
+// NAVBAR (FIXED AND STATIC)
+// -------------------------
+
+
+// COMMON STYLES
+// -------------
+
+.navbar {
+  // Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
+  *position: relative;
+  *z-index: 2;
+
+  overflow: visible;
+  margin-bottom: @baseLineHeight;
+  height:@navbarHeight + 8px;
+
+  background-color: transparent;
+
+  background-image: url(/static/img/header-border.png);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+// Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
+.navbar-inner {
+  min-height: @navbarHeight;
+  padding-left:  20px;
+  padding-right: 20px;
+  //#gradient > .vertical(@navbarBackgroundHighlight, @navbarBackground);
+  //.border-radius(4px);
+  //.box-shadow(~"0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1)");
+  font-family: @baseFontFamily;
+  font-size: 14px;
+  background-color: transparent;
+  height:@navbarHeight;
+  color: #333;
+
+  background-image: url(/static/img/header-background.png);
+  background-repeat: repeat-x;
+}
+
+// Set width to auto for default container
+// We then reset it for fixed navbars in the #gridSystem mixin
+.navbar .container {
+  width: auto;
+}
+
+// Override the default collapsed state
+.nav-collapse.collapse {
+  height: auto;
+}
+
+
+// Brand, links, text, and buttons
+.navbar {
+  color: @navbarText;
+  // Hover and active states
+  .brand:hover {
+    text-decoration: none;
+  }
+  // Website or project name
+  .brand {
+    float: left;
+    display: block;
+    padding: 21px 20px 8px 45px;
+    margin-left: -20px; // negative indent to left-align the text down the page
+    font-size: 14px;
+    font-weight: 200;
+    color: @navbarBrandColor;
+  }
+  // Plain text in topbar
+  .navbar-text {
+    margin-bottom: 0;
+    line-height: @navbarHeight;
+  }
+  // Janky solution for now to account for links outside the .nav
+  .navbar-link {
+    color: @navbarLinkColor;
+    &:hover {
+      color: @navbarLinkColorHover;
+    }
+  }
+  // Buttons in navbar
+  .btn,
+  .btn-group {
+    .navbarVerticalAlign(30px); // Vertically center in navbar
+  }
+  .btn-group .btn {
+    margin: 0; // then undo the margin here so we don't accidentally double it
+  }
+}
+
+// Navbar forms
+.navbar-form {
+  margin-bottom: 0; // remove default bottom margin
+  .clearfix();
+  input,
+  select,
+  .radio,
+  .checkbox {
+    .navbarVerticalAlign(30px); // Vertically center in navbar
+  }
+  input,
+  select {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  input[type="image"],
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-top: 3px;
+  }
+  .input-append,
+  .input-prepend {
+    margin-top: 6px;
+    white-space: nowrap; // preven two  items from separating within a .navbar-form that has .pull-left
+    input {
+      margin-top: 0; // remove the margin on top since it's on the parent
+    }
+  }
+}
+
+// Navbar search
+
+.header-search-navbar{
+  height: 30px !important;
+  padding: 0 11px 0  !important;
+}
+.navbar-search {
+  position: relative;
+  float: left;
+  width: 50%;
+  text-align: right;
+  .navbarVerticalAlign(54px); // Vertically center in navbar
+  margin-bottom: 0;
+  margin-top: 12px;
+
+    .input-append {
+      input{
+        .border-radius(~"3px 0 0 3px !important");
+        .box-shadow(~"2px 4px 3px -3px rgba(0, 0, 0, 0.12) inset");
+        border-color: #99B4B8 transparent #A9C6CA #A2BFC2 !important;
+        border-width: 1px 0 1px 1px;
+        border-style: solid;
+        height: (@navbarButtonHeight + 2px);
+      }
+    }
+
+  .search-query {
+    padding: 7px 0 1px 9px;
+    #font > .sans-serif(12px, normal, 1);
+    color: @navbarText;
+    background-color: @navbarSearchBackground;
+    border: 1px solid @navbarSearchBorder;
+    .box-shadow(~"inset 0 1px 0px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15)");
+    .transition(none);
+
+	border-right-width: 0px;
+	height:@navbarButtonHeight;
+	margin-top: 0px;
+
+    .placeholder(@navbarSearchPlaceholderColor);
+
+    // Focus states (we use .focused since IE7-8 and down doesn't support :focus)
+    &:focus,
+    &.focused {
+      color: @grayDark;
+      text-shadow: 0 1px 0 @white;
+      background-color: @navbarSearchBackgroundFocus;
+      outline: 0;
+  	  border: 1px solid @navbarSearchBorder;
+  	  border-right-width: 0px;
+    }
+  }
+
+	.qmagico-search-query-hover {
+		background-color: @qmagicoFocusSearch !important;
+		color: @grayDark !important;
+		.box-shadow(-3px 2px 0 rgba(0,0,0,.1)) !important;
+		border-color: #CCC !important;
+	}
+}
+
+// Buttons
+.search-button{
+  .qm-inline-block;
+  // Vertically center the button given @navbarHeight
+  @elementHeight: 28px;
+  //margin: ((@navbarHeight - @elementHeight) / 2 - 1) -1px ((@navbarHeight - @elementHeight) / 2);
+  line-height: @baseLineHeight;
+  float: right;
+  margin-top: 0px;
+  height: (@navbarButtonHeight -1px);
+  background-image: none;
+  background-color: @white;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  border-color: #99B4B8 #A2BFC2 #A9C6CA transparent !important;
+  border-left-width: 0px;
+  .box-shadow(~"-2px 2px 3px -1px rgba(0, 0, 0, 0.12) inset");
+  .transition(none);
+  .border-radius(~"0 3px 3px 0 !important");
+  cursor: pointer;
+  margin-left: -1px;
+
+  .btn{
+    width: 19px;
+    height: 18px;
+    margin: 6px;
+    padding: 0;
+    .border-radius(~'3px !important');
+    line-height: 0;
+  }
+
+  .btn-danger{
+    #gradient > .vertical(#F15038, #EB2C10);
+    .box-shadow(~'none');
+    border: 0;
+  }
+}
+
+.search-button:hover{
+  background-color: #D3EFAC;
+}
+
+.qmagico-navbar-btn-hover {
+	background-color: @qmagicoFocusSearch !important;
+	.box-shadow(-3px 2px 0 rgba(0,0,0,.1)) !important;
+	border-color: #CCC !important;
+}
+
+// Hover state
+.navbar .btn-group {
+  margin: 0;
+  // Vertically center the button given @navbarHeight
+  @elementHeight: 20px;
+  padding: ((@navbarHeight - @elementHeight) / 2 - 1) 5px ((@navbarHeight - @elementHeight) / 2);
+}
+
+
+// FIXED NAVBAR
+// ------------
+
+// Shared (top/bottom) styles
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: @zindexFixedNavbar;
+  margin-bottom: 0; // remove 18px margin for static navbar
+  min-width: 760px;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+  padding-left:  0;
+  padding-right: 0;
+  .border-radius(0);
+}
+
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  #grid > .core > .span(@gridColumns);
+}
+
+// Fixed to top
+.navbar-fixed-top {
+  top: 0;
+}
+
+// Fixed to bottom
+.navbar-fixed-bottom {
+  bottom: 0;
+}
+
+
+
+// NAVIGATION
+// ----------
+
+.navbar .nav {
+  position: relative;
+  left: 0;
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+}
+.navbar .nav.pull-right {
+  float: right; // redeclare due to specificity
+}
+.navbar .nav > li {
+  display: block;
+  float: left;
+}
+
+// Links
+.navbar .nav > li > a {
+  float: none;
+  // Vertically center the text given @navbarHeight
+  @elementHeight: 20px;
+  padding: ((@navbarHeight - @elementHeight) / 2 - 1) 10px ((@navbarHeight - @elementHeight) / 2 + 1);
+  line-height: 19px;
+  color: @navbarLinkColor;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+
+// Hover
+.navbar .nav > li > a:hover {
+  background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
+  color: @navbarLinkColorHover;
+  text-decoration: none;
+}
+
+// Active nav items
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+  color: @navbarLinkColorActive;
+  text-decoration: none;
+  background-color: @navbarLinkBackgroundActive;
+}
+
+// Dividers (basically a vertical hr)
+.navbar .divider-vertical {
+  height: @navbarHeight;
+  width: 1px;
+  margin: 0 9px;
+  overflow: hidden;
+  background-color: @navbarBackground;
+  border-right: 1px solid @navbarBackgroundHighlight;
+}
+
+// Secondary (floated right) nav in topbar
+.navbar .nav.pull-right {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+// Navbar button for toggling navbar items in responsive layouts
+// These definitions need to come after '.navbar .btn'
+.navbar .btn-navbar {
+  display: none;
+  float: right;
+  padding: 7px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  .buttonBackground(@navbarBackgroundHighlight, @navbarBackground);
+  .box-shadow(~"inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075)");
+}
+.navbar .btn-navbar .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #f5f5f5;
+  .border-radius(1px);
+  .box-shadow(0 1px 0 rgba(0,0,0,.25));
+}
+.btn-navbar .icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+
+
+// Dropdown menus
+// --------------
+
+.navbar .caret {
+	vertical-align: middle;
+	#qm-caret > .down(5px, #333333);
+}
+
+.navbar .btn-group > .dropdown-toggle {
+  padding-left: 2px;
+  padding-right: 20px;
+  .box-shadow(~"inset 0px 0 0 rgba(255,255,255,.125), inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(0,0,0,.05)");
+  *padding-top: 4px;
+  *padding-bottom: 4px;
+  text-shadow:0px 1px rgba(255,255,255,.70);
+
+  img {
+    margin-left: 5px;
+  }
+}
+
+.navbar .qmagico-navbar-dropdown-toggle-notification {
+  padding-left: 8px;
+  padding-right: 20px;
+  color: #5F9292 !important;
+  font-size: 11px !important;
+  //text-decoration: none;
+}
+
+.navbar .qmagico-notification-icon {
+	margin-left: 6px;
+	margin-top: -7px;
+}
+
+.qmagico-badge-notification {
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 12.5px;
+	color: @white;
+	white-space: nowrap;
+  text-align: center;
+	background-color: #F03D25;
+  width: 12px;
+  height: 13px;
+	//padding: 0px 3.5px;
+	margin-right: 11px;
+	margin-top: -10px;
+	margin-left: -27px;
+	.border-radius(9px);
+	.box-shadow(0px 1px 0 rgba(0,0,0,.12));
+	border: 1px solid #F03D25;
+	float: right;
+	position: relative;
+}
+
+.qmagico-badge-notification-zero {
+	font-size: 9px;
+	font-weight: bold;
+	line-height: 13px;
+	color: @white;
+	white-space: nowrap;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+	background-color: #D3E9EB;
+	padding: 0px 3px 0px;
+	margin-right: 15px;
+	margin-top: -10px;
+	margin-left: -27px;
+	.border-radius(9px);
+	.box-shadow(0px 1px 0 rgba(0,0,0,.1));
+	border: 1px solid #B6D8DC;
+	float: right;
+	position: relative;
+}
+
+.qmagico-dropdown-notification {
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+.qmagico-dropdown-menu-li-bottom-notification {
+  background-image: url(/static/img/dropdown-menu-bottom.png);
+  background-position: left top;
+  height:33px;
+  text-align: center;
+}
+
+.navbar .qmagico-dropdown-menu-notification li > div > a {
+  color: @qmagicoAutocompleteBot;
+  padding: 7px 5px;
+  display: inline-block;
+  text-shadow: 0 -1px 0 #FFFFFF;
+  font-size: 11px;
+}
+
+.qmagico-dropdown-menu-notification {
+	.box-shadow(-3px 3px 0 rgba(0,0,0,.1));
+	width: 270px;
+	padding: 0px 0;
+	margin: -12px 10px 0 0;
+	.border-radius(0px);
+	border: 1px solid #CCC;
+
+  &:after {
+    border-bottom: 6px solid @qmagicoLaranja !important;
+  }
+}
+
+.qmagico-dropdown-notification-middle-div {
+	padding: 0px 0;
+	height: 76px;
+	overflow: hidden;
+	float: center;
+    display: block;
+	border-bottom: 1px solid #CCCCCC;
+	background-color: @white;
+	cursor: pointer;
+
+	&:hover { background-color: lighten(saturate(@qmagicoLaranja, -5%), 5%); }
+}
+
+.qmagico-notification-new{
+	background-color: @qmagicoLaranja !important;
+	background-image: url(/static/img/notification-top-marker.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.loading {
+	height: 19px;
+	vertical-align: middle;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.loading-page {
+  background-image: url(/static/img/loading-page.gif);
+  text-align: center;
+  margin: 150px 0 176px;
+  background-repeat: no-repeat;
+  background-position: center;
+  //background-color: red;
+  height: 10px;
+
+  &:after {
+    content: 'Carregando conteúdo ...';
+    margin-top: 21px;
+    display: inline-block;
+    margin-left: 14px;
+  }
+}
+
+.qmagico-dropdown-notification-photo {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 56px;
+	padding-top: 18px;
+}
+
+.qmagico-dropdown-notification-text {
+	display: inline-block;
+	float: left;
+	width: 214px;
+	line-height: 15px;
+	font-size: 11px;
+	overflow: hidden;
+}
+
+.qmagico-dropdown-notification-text-top {
+	color: @grayDark;
+	font-size: 11px;
+	padding: 7px 4px;
+	width: 206px;
+	height: 41px;
+}
+
+.qmagico-dropdown-notification-text-bottom {
+	color: @grayLight;
+	padding: 3px 8px;
+	text-align: right;
+}
+
+.qmagico-dropdown-notification-bottom-div {
+	padding: 0px 0;
+	height: 33px;
+	overflow: hidden;
+	float: center;
+    display: block;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.qmagico-dropdown-menu-li-top {
+	background-image: url(/static/img/dropdown-menu-top-back.png);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	height:118px;
+}
+
+.qmagico-perfil-text-div {
+	display: block;
+	text-align: right;
+}
+
+.qmagico-info-points-border-left {
+	width: 18px;
+	background-image: url(/static/img/dropdown-menu-points-info-left.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	.qm-inline-block;
+	height: 22px;
+	margin-right: -4px;
+	font-size: 11px;
+	line-height: 22px;
+}
+.qmagico-info-points-border-right {
+	width: 18px;
+	background-image: url(/static/img/dropdown-menu-points-info-right.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	.qm-inline-block;
+	height: 22px;
+	font-size: 11px;
+	line-height: 22px;
+}
+
+.qmagico-info-points-left {
+	max-width: 100px;
+	text-align: center;
+	.qm-inline-block;
+	color: #1B4C19;
+	font-size: 11px;
+	background-image: url(/static/img/dropdown-menu-points-info-mid-left.png);
+	background-position: left top;
+	padding-right: 5px;
+	padding-left: 5px;
+	height: 22px;
+	margin-right: -5px;
+	line-height: 22px;
+}
+
+.qmagico-info-points-right {
+	max-width: 100px;
+	text-align: center;
+	.qm-inline-block;
+	color: #814B10;
+	font-size: 11px;
+	background-image: url(/static/img/dropdown-menu-points-info-mid-right.png);
+	background-position: right top;
+	padding-right: 3px;
+	padding-left: 3px;
+	height: 22px;
+	margin-right: -4px;
+	line-height: 22px;
+}
+
+.qmagico-dropdown-menu-bottom {
+  background-image: url(/static/img/dropdown-menu-bottom.png);
+  height:33px;
+  .border-radius(0px 0px 6px 6px);
+	border-top: 1px solid #CCCCCC;
+  overflow: hidden;
+
+  .btn-top-config {
+    width:110px;
+  }
+
+  .btn-top-profile {
+    width:58px;
+  }
+
+  .btn-top-exit {
+    width:49px;
+  }
+}
+
+.qmagico-info-points-div {
+  margin-top:25px;
+  text-align: right;
+
+  table{
+    color: #814B10;
+    font-size: 11px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255,255,255, .33);
+    background-color: #F9DA99;
+    border: 1px solid #F6C766;
+    float: right;
+
+    tr td{
+      padding: 1px 3px 1px 4px;
+      border: inherit;
+
+      img{
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+.navbar .qmagico-perfil-photo {
+	display: inline-block;
+	float: right;
+	padding: 13px 0px 0px 0px;
+	text-align: center;
+	width: 108px;
+	height: 106px;
+}
+
+.navbar .qmagico-perfil-details {
+	display: inline-block;
+	padding: 18px 0px 0px 0px;
+	width: 158px;
+}
+
+.qmagico-dropdown-menu-perfil {
+	.box-shadow(-3px 3px 0 rgba(0,0,0,.1));
+	min-width: 270px;
+	padding: 0px 0;
+	margin: -10px 10px 0 0;
+	border: 1px solid #CCC;
+}
+
+.qmagico-dropdown-perfil-bottom-div {
+	padding: 0px 8px 0 8px;
+	height: 33px;
+	overflow: hidden;
+	float: center;
+    display: inline-block;
+	margin-right: -4px;
+	border-left: 1px solid #F2F9F9;
+	border-right: 1px solid #CCE6E9;
+}
+
+.navbar .qmagico-dropdown-perfil-bottom-div > a:hover {
+	color: @qmagicoAutocompleteBot;
+	padding: 7px 0 7px 5px;
+	display: inline-block;
+	text-shadow: 0 -1px 0 white;
+	font-size: 11px;
+  letter-spacing: 0;
+}
+
+.navbar .qmagico-dropdown-perfil-bottom-div > a {
+	color: @qmagicoAutocompleteBot;
+	padding: 7px 0 7px 5px;
+	display: inline-block;
+	text-shadow: 0 -1px 0 white;
+	font-size: 11px;
+  letter-spacing: 0;
+}
+
+// Menu position and menu carets
+.navbar .dropdown-menu {
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   7px inset transparent;
+    border-right:  7px inset transparent;
+    border-bottom: 7px solid @dropdownBorder;
+    border-bottom-color: @dropdownBorder;
+    position: absolute;
+    top: -7px;
+    left: 9px;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   6px solid transparent;
+    border-right:  6px solid transparent;
+    border-bottom: 6px solid @dropdownBackground;
+    position: absolute;
+    top: -6px;
+    left: 10px;
+  }
+}
+// Menu position and menu caret support for dropups via extra dropup class
+.navbar-fixed-bottom .dropdown-menu {
+  &:before {
+    border-top: 7px solid #ccc;
+    border-top-color: @dropdownBorder;
+    border-bottom: 0;
+    bottom: -7px;
+    top: auto;
+  }
+  &:after {
+    border-top: 6px solid @dropdownBackground;
+    border-bottom: 0;
+    bottom: -6px;
+    top: auto;
+  }
+}
+// Dropdown toggle caret
+.navbar .nav li.dropdown .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open .caret {
+  border-top-color: @white;
+  border-bottom-color: @white;
+}
+.navbar .nav li.dropdown.active .caret {
+  .opacity(100);
+}
+
+// Remove background color from open dropdown
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: transparent;
+}
+
+// Dropdown link on hover
+.navbar .nav li.dropdown.active > .dropdown-toggle:hover {
+  color: @white;
+}
+
+// Right aligned menus need alt position
+// TODO: rejigger this at some point to simplify the selectors
+.navbar .pull-right .dropdown-menu,
+.navbar .dropdown-menu.pull-right {
+  left: auto;
+  right: 0;
+  &:before {
+    left: auto;
+    right: 12px;
+  }
+  &:after {
+    left: auto;
+    right: 13px;
+  }
+}

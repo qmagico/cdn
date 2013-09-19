@@ -1,0 +1,52 @@
+ul.qm-dropdown-menu {
+  top: inherit;
+  left: inherit;
+  background: white;
+  .border-radius(0) !important;
+  padding: 0 !important;
+  border: 1px solid #D9D9D9;
+  margin-left: -1px;
+  width: auto;
+
+  li {
+    margin: 2px;
+    width: auto;
+
+    a {
+      width: inherit;
+      display: block;
+      padding: 11px 10px;
+      background: white;
+      font-size: 14px;
+      text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+      &:hover { background: #BBDDE2; color: black !important; }
+    }
+  }
+}
+
+.dropdown {
+  .qm-inline-block;
+}
+
+.styled-select {
+  width: 240px;
+  height: 34px;
+  overflow: hidden;
+  background: url(fs-selecter-arrow.png) no-repeat right #FFFFFF;
+  border: 1px solid #ccc;
+  .border-radius(3px);
+
+  select {
+    background: transparent;
+    width: 268px;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+}

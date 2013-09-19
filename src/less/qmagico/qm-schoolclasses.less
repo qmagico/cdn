@@ -1,0 +1,229 @@
+// Choose class
+
+.qm-choose-class {
+	padding: 10px 7px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	background: url(/static/img/background-stripes.png);
+	color: @qmGrayFontMid;
+	font-size: 14px;
+	font-weight: bold;
+
+	& > span { margin-left: 5px; }
+
+	.qm-class {
+		margin: 5px 2px;
+		background: @grayBar;
+		width: 270px;
+		.box-shadow(1px 1px 0 rgba(210, 210, 210, 0.7));
+		.qm-inline-block;
+		border: 1px solid @qmGrayBorder;
+		.border-radius(6px);
+		padding: 0 10px;
+		line-height: 38px;
+		text-shadow: 0 1px 0 @white;
+		color: #3F848B;
+		font-weight: bold;
+		font-size: 12px;
+		overflow: hidden;
+
+		.badge {
+			float: right;
+			font-size: 11px;
+			margin-top: 12px;
+			color: @white;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			background-color: @errorText;
+			padding: 0px 4px;
+			font-weight: normal;
+		}
+
+		&:hover { text-decoration: none; }
+
+		&.new {
+			.border-radius(0);
+			.box-shadow(0 0 0);
+			border-color: transparent;
+			outline: 2px dashed @qmGrayBorder;
+			background: url(/static/img/content-empty-back.png);
+			color: @qmGrayFont;
+			padding: 0 10px;
+			height: 38px;
+
+			&:before {
+				content: url(/static/img/class-new-plus.png);
+				float: left;
+				margin-top: 6px;
+				margin-right: 10px;
+			}
+		}
+
+        &.open{
+          background: #FEF8D3;
+        }
+	}
+
+	&.chosen {
+		padding: 7px 7px !important;
+
+		span {
+			float: left;
+			margin-top: 11px;
+			width: 260px;
+			display: block;
+		}
+
+		.qm-class {
+			width: inherit !important;
+			color: @qmGrayFontDark !important;
+			display: block;
+			margin: 0 0 0 270px;
+			padding: 0 15px;
+
+			& > a {
+				float: right;
+				color: #3F848B;
+
+				&:hover { text-decoration: underline; }
+
+				&:after {
+					#qm-caret > .down(4px, @grayDark);
+					margin-left: 10px;
+					vertical-align: 2px;
+				}
+			}
+		}
+	}
+}
+
+// Search class
+.qm-search-class {
+	.qm-noise-background;
+	border-top: 1px solid @qmagicoGrayBorder;
+	padding: 0px 10px 4px 10px;
+	margin-bottom: 0;
+	//.box-shadow(~"inset 0 1px 1px rgba(0, 0, 0, .1)");
+
+	.qm-class {
+		border-top: 1px solid #E4E4E4 !important;
+		margin: 10px 0;
+		padding: 10px 5px 10px 15px;
+		background-color: @grayBar;
+		border: 1px solid @qmagicoGrayBorder;
+		.border-radius(5px);
+		font-size: 12px;
+		.box-shadow(1px 1px @qmagicoGrayBorder);
+	}
+
+	.title {
+		font-weight: bold;
+		color: #3F848B;
+	}
+
+	.teacher {
+		padding-left: 8px;
+		padding-right: 4px;
+	}
+
+	.students-number {
+		font-weight: bold;
+		color: @qmGrayFont;
+		padding-left: 2px;
+	}
+
+	.students {
+		margin-left: -5px;
+
+		img {
+			margin: 5px 1px 0;
+			border: 1px solid @qmGrayBorder;
+
+			&:first-child{
+				border: 2px solid #F03D25;
+				.border-radius(3px);
+			}
+		}
+	}
+
+	.btn {
+		float: right;
+		margin-top: -5px;
+	}
+}
+
+// Manage class
+.qm-topbar.manage-class {
+	border-bottom: 1px solid @qmGrayBorder;
+
+	.notification {
+		margin-right: 250px;
+		padding-left: 15px;
+		line-height: 45px;
+		color: @qmGrayFontDark;
+		font-size: 14px;
+		border-right: 1px solid @qmGrayBorder;
+        height: 45px;
+
+		&.active {
+			background: #FEF8D3;
+			color: #804B10;
+			text-shadow: 0 1px 0 rgba(255,255,255,.6);
+
+			&:before {
+				content: url(/static/img/exclamation.png);
+				vertical-align: -4px;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+.manage-class  .qm-filterbar ul.qm-dropdown-menu li a{
+	width: auto !important;
+}
+
+.qm-student-list {
+	.qm-noise-background;
+	.box-shadow(~"inset 0 1px 1px rgba(0, 0, 0, .1)");
+	padding: 5px 5px;
+
+	.qm-student {
+		border: 1px solid @qmGrayBorder;
+		.box-shadow(1px 1px 0 rgba(0, 0, 0, .1));
+		height: 70px;
+		background: @white;
+		width: 270px;
+		.qm-inline-block;
+		margin: 5px 5px;
+
+		img {
+			width: 70px;
+			height: 70px;
+			float: left;
+			margin-right: 10px;
+		}
+
+		span {
+		    color: #3F848B;
+		    display: block;
+		    font-size: 12px;
+		    font-weight: bold;
+		    margin: 10px 7px 5px 10px;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: pre;
+		}
+
+		&.pending { background: #FEF8D3; }
+
+        form.form-inline {
+          .qm-inline-block;
+        }
+	}
+}
+
+.student-name{
+	display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 189px;
+}

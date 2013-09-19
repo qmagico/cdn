@@ -1,0 +1,137 @@
+// Mixin to fluid lists of boxes (as in Library section)
+
+@mixin fluid-boxes($min-width: 220px, $max-width: 300px, $spacing: 30px, $restraint: 130px) {
+  $min-width: $min-width + $spacing;
+  $max-width: $max-width + $spacing;
+
+  // The minimum number of blocks per row, considering the minimum width
+  // It's also the default width of the boxes
+  $per-row: strip-units(ceil(($body-min-width - $restraint)/$max-width));
+  width: 100%/$per-row;
+
+  // Now we'll build the queries for the bigger screens
+  $per-row: $per-row + 1;
+  $media-min-width: $min-width*$per-row + $restraint;
+
+  @for $i from 0 through 2 {
+    $media-max-width: $max-width*($per-row + $i) + $restraint;
+    @media screen and (min-width: $media-min-width) and (max-width: $media-max-width) {
+      width: 100%/($per-row + $i);
+    }
+    $media-min-width: $media-max-width;
+  }
+
+  // We can scale if necessary
+}
+
+// Mixin for retina display
+// This wraps the @content with the retina display media query
+//
+//   @include retina { @content }
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// Mixin for general sprites
+// This will automatically decide the correct map for the screen resolution (retina)
+// and output the correct background-position
+//
+//   @include sprite-position($name, $spritemap, $spritemap2x[, $offsetx, $offsety]);
+
+@mixin retina-sprite-position($name, $spritemaps, $offsetx: 0, $offsety: 0) {
+  background-position: sprite-position(nth($spritemaps, 1), $name, $offsetx, $offsety);
+
+  @if length($spritemaps) > 1 {
+    @include retina {
+      $pos: sprite-position($spritemap2x, $name, $offsetx*2, $offsety*2);
+      background-position: nth($pos, 1)/2 nth($pos, 2)/2;
+    }
+  }
+}
+
+// Mixin for setting the right width of the sprites (used with retina sprites).
+// It sets correctly the background-size
+//
+//   @include retina-sprite-size($spritemap[, $retina]);
+//
+// $retina: true -> considers the $spritemap is for retina, thus, width should be half
+//                  of $spritemap's width
+
+@mixin sprite-size($spritemap, $retina: false) {
+  // The "sprites/" hack is due to sprite-path() returning incorrectly the sprite's path.
+  // Should be fixed in the future
+  $divisor: 1;
+  @if $retina {
+    $divisor: 2;
+  }
+  @include background-size(ceil(sprite-width($spritemap)/$divisor) auto);
+}
+
+// The clearfix mixin
+// Fixes the parent's dimensions for floating children
+//
+//   @include clearfix;
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Mixin for various backgrounds
+
+@mixin bg-noise-light {
+  background: image-url("backgrounds/noise-light.png") repeat;
+}
+
+@mixin bg-noise-dark {
+  background: image-url("backgrounds/noise-dark.png") repeat;
+}
+
+@mixin bg-noise-darker {
+  background: image-url("backgrounds/noise-darker.png") repeat;
+}
+
+// Circle mixin
+//
+//   @include circle($diameter)
+
+@mixin circle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: $diameter;
+}
+
+// Rhombus mixin
+//
+//   @include rhombus($size[, $scaleX, $scaleY])
+
+@mixin rhombus($size, $scaleX: 1, $scaleY: 1) {
+  width: $size;
+  height: $size;
+  @include transform(scale($scaleX, $scaleY) rotate(45deg));
+}
+
+@mixin breadcrumb($height, $border: 2px solid $border-color, $scaleX: 1, $orientation: right) {
+  @include rhombus($height, $scaleX: $scaleX);
+  border: $border;
+  position: absolute;
+  top: 0px;
+  right: -(1-$scaleX)*$height/2;
+  @if $orientation == right {
+    border-bottom: none;
+    border-left: none;
+  }
+  @elseif $orientation == left {
+    border-top: none;
+    border-right: none;
+  }
+}

@@ -1,0 +1,39 @@
+//bg img
+$background-noise-light: image-url("backgrounds/noise-light.png");
+$background-noise-mid: image-url("backgrounds/noise-mid.png");
+$background-noise-dark: image-url("backgrounds/noise-dark.png");
+$background-mock-hover: image-url("backgrounds/mock-hover.png");
+
+
+//bg color
+$bg-white: #FFFFFF;
+$bg-light-cont: #FAFAFB;
+
+.bg-noise-light {
+  background: $background-noise-light repeat;
+}
+
+.bg-noise-mid {
+  background: $background-noise-mid repeat;
+}
+
+.bg-noise-dark {
+  background: $background-noise-dark repeat;
+}
+
+.bg-mock-hover {
+  background: $background-mock-hover repeat;
+}
+
+//bg color
+.bg-white {
+  background-color: $bg-white !important;
+}
+
+.bg-light-cont {
+  background-color: $bg-light-cont !important;
+}
+
+.no-bg {
+  background: none !important; 
+}

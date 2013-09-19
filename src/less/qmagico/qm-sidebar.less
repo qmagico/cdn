@@ -1,0 +1,127 @@
+.qm-sidebar {
+	border-right: 0 !important;
+	margin-top: 20px;
+
+	li {
+		border: 1px solid rgba(153, 153, 153, .2);
+		border-width: 1px 0 0;
+
+		a {
+			margin: 0 !important;
+			padding: 10px 0 !important;
+			display: block;
+			color: @qmagicoGrayFont;
+			text-shadow: 0 1px 0 rgba(255,255,255,.70);
+			font-size: 11px;
+			font-weight: bold;
+			text-align: center;
+			min-width: 0 !important;
+			width: 95px;
+			.border-radius(0) !important;
+			cursor: pointer !important;
+			.box-sizing(border-box);
+
+			&:before {
+				content: '';
+				display: block;
+				height: 37px;
+				margin-bottom: 3px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-image: url(/static/img/sidebar.png);
+			}
+
+			&:hover {
+				background: none;
+				//margin-top: 1px !important;
+			}
+		}
+	}
+
+	.active {
+		.box-shadow(none);
+		border: 0;
+		background-color: @grayBar;
+		.border-radius(4px 0 0 0);
+		border-right: 1px solid @grayBar;
+	}
+
+	.active + li {
+		border-top: 0;
+	}
+
+	.active a, .active a:hover {
+		.box-shadow(~"0 1px 0 rgba(0,0,0,.08), inset 1px 0 #F2F2F3, inset 0 -1px #EAEAEB");
+		border-right: 0 !important;
+		.border-radius(4px 0 0 4px) !important;
+		background-color: @grayBar;
+		#gradient > .horizontal(#fff, @grayBar);
+		border-bottom-color: rgba(0,0,0,.24)!important;
+		cursor: default;
+		border-right-color: @grayBar !important;
+		color: @qmagicoGrayFontDark;
+		margin-top: 0 !important;
+
+		&:after {
+			content: '';
+			height: 100%;
+			width: 30px;
+		}
+	}
+
+	// Icones
+
+	.qm-admin:before {
+		background-position: 0px 0px;
+	}
+
+	.qm-admin:hover:before, .active .qm-admin:before {
+		background-position: -79px 0px;
+	}
+
+	.qm-profile:before {
+		background-position: 0px -65px;
+	}
+
+	.qm-profile:hover:before, .active .qm-profile:before {
+		background-position: -79px -65px;
+	}
+
+	.qm-study:before {
+		background-position: 0px -130px;
+	}
+
+	.qm-study:hover:before, .active .qm-study:before {
+		background-position: -79px -130px;
+	}
+
+	.qm-classes:before {
+		background-position: 0px -195px;
+	}
+
+	.qm-classes:hover:before, .active .qm-classes:before {
+		background-position: -79px -195px;
+	}
+
+	.qm-stats:before {
+		background-position: 0px -260px;
+	}
+
+	.qm-stats:hover:before, .active .qm-stats:before {
+		background-position: -79px -260px;
+	}
+}
+
+//////
+
+.qm-sidebar-li-top {
+	padding-top: 10px;
+	padding-bottom: 6px;
+	color: @qmagicoGrayFont;
+	line-height: @baseLineHeight;
+	text-shadow: 0 1px rgba(255,255,255,.70);
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 1px !important;
+}

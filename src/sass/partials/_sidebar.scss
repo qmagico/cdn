@@ -1,0 +1,58 @@
+@import "compass/utilities/sprites";
+
+$sidebar-border-color: rgba(#999, 0.25);
+$sidebar-sprite-spacing: 36px;
+
+// Sidebar sprites configuration.. we want them horizontally centered
+$sidebar: sprite-map("sidebar/*.png", $spacing: $sidebar-sprite-spacing, $position: 50%);
+
+// Padding for the body
+.has-sidebar {
+  background-image: image-url("backgrounds/sidebar.png");
+  background-repeat: repeat-y;
+  padding-left: 120px;
+}
+
+// Sidebar
+.sidebar {
+  width: 95px;
+  margin-left: 6px;
+  position: absolute;
+  left: 0;
+}
+
+.sidebar-item {
+  font-size: 11px;
+  text-align: center;
+
+  &:last-child > a { border-bottom: 1px solid $sidebar-border-color; }
+
+  &.active > a {
+    background-color: $background-color;
+    border-left: 1px solid $sidebar-border-color;
+    border-bottom: 1px solid rgba(#000, .2);
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 1px 0 rgba(#000, .1);
+  }
+
+  &.active + & > a { border-top: 0; }
+}
+
+%sidebar-link {
+  display: block;
+  background: sprite-url($sidebar) no-repeat;
+  color: #999999;
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(#fff, .7);
+  padding: 56px 0 12px 0;
+  border-top: 1px solid $sidebar-border-color;
+}
+
+@each $section in admin, profile, study, classes, stats {
+  .sidebar-#{$section} {
+    @extend %sidebar-link;
+    @include retina-sprite-position($section, $sidebar, 50%, 15px);
+
+    &:hover, .sidebar-item.active > & { @include retina-sprite-position($section + -active, $sidebar, 50%, 15px); }
+  }
+}

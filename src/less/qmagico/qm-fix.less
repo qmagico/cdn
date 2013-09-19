@@ -1,0 +1,66 @@
+// Fonts
+
+/*@font-face {
+	font-family: 'Lucida Grande';
+	src: url('/static/fonts/lucidagrande.eot');
+	src: url('/static/fonts/lucidagrande.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Lucida Grande Bold';
+	src: url('/static/fonts/lucidagrandebold.eot');
+	src: url('/static/fonts/lucidagrandebold.ttf') format('truetype');
+}
+
+
+@font-face {
+	font-family: 'Lucida Sans';
+	src: url('/static/fonts/lucidasans.eot');
+	src: url('/static/fonts/lucidasans.ttf') format('truetype');
+}
+*/
+
+// Buttons
+
+.btn {
+	font-weight: bold;
+
+	.qm-caret {
+		margin-left: 8px;
+		.qm-inline-block();
+		#qm-caret > .down(4px, black);
+	}
+}
+
+.btn-large {
+	max-height: 37px;
+}
+
+.btn .caret {
+	#qm-caret > .down(4px, black);
+	.opacity(100) !important;
+	.qm-inline-block;
+	margin-left: 3px;
+	margin-top: -3px;
+}
+
+.label.qm-label-blue {
+	background: #2B4060;
+}
+.label.label-info {
+	background: #52A2AD;
+}
+.label.label-important {
+	background: #E13A24;
+}
+
+.navbar .brand {
+	line-height: @navbarHeight + 5px;
+	margin: 0px 25px 0 !important;
+	padding: 0 !important;
+
+	img { margin-right: 12px; vertical-align: middle; }
+}
+
+.qm-container-fluid {
+	margin-right: 20px;
+}

@@ -1,0 +1,17 @@
+// Hack function to strip the unit of a number
+//
+//   strip-units(1px) -> 1
+//   strip-units(1em) -> 1
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Function to return the width of a generated sprite
+// (useful to use with retina sprites)
+//
+//   sprite-width($map)
+
+@function sprite-width($map) {
+  @return image-width("sprites/" + sprite-path($spritemap));
+}

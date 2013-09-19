@@ -1,0 +1,114 @@
+$btn-height: 26px;
+$btn-font-size: 12px;
+$btn-large-height: 32px;
+$btn-large-font-size: 14px;
+
+.btn {
+  display: inline-block;
+  font-weight: bold;
+  font-size: $btn-font-size;
+  line-height: $btn-height;
+  cursor: pointer;
+  padding: 0 floor(0.4 * $btn-height);
+  background-repeat: repeat no-repeat !important;
+  border-radius: 3px;
+
+  // Styling for the deafult button
+  border: 1px solid #cdcdcd;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(#fff, .7);
+  box-shadow: inset 0 1px 0 #f5f5f5, inset 0 -1px 0 #d7d7dc;
+  @include background-image(linear-gradient(#ebebed, #e6e6e9));
+
+  &:hover,
+  &:focus {
+    @include background-image(linear-gradient(#e6e6e9, #d8d8d8));
+    box-shadow: inset 0 1px 0 #f5f5f5, inset 0 -1px 0 #c5c5c5;
+  }
+
+  &:active {
+    color: #111;
+    @include background-image(linear-gradient(#e6e6e9, #ebebed));
+    box-shadow: inset 0 1px 0 #d7d7dc, inset 0 -1px 0 #f5f5f5;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background: #f4f4f6;
+    border: 1px solid #e6e6e6;
+    color: #ababab;
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(#000, .2);
+  border: 1px solid #4ca6af;
+  @include background-image(linear-gradient(#6cb9c1, #4aa5ae));
+  box-shadow: inset 0 1px 0 rgba(#fff, .2), inset 0 -1px 0 #418d96;
+
+  &:hover,
+  &:focus {
+    @include background-image(linear-gradient(#6ab8c0, #43949c));
+    box-shadow: inset 0 1px 0 rgba(#fff, .2), inset 0 -1px 0 #418d96;
+  }
+
+  &:active {
+    color: #cee7eb;
+    @include background-image(linear-gradient(#4aa5ae, #6cb9c1));
+    box-shadow: inset 0 1px 0 #418d96, inset 0 -1px 0 rgba(#fff, .2);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background: #add7dc;
+    color: #cfe8eb;
+    border: 1px solid #9ed0d6;
+    text-shadow: 0 -1px 0 rgba(#000, .12);
+    box-shadow: inset 0 1px 0 #bddfe3, inset 0 -1px 0 #a0ccd1;
+  }
+}
+
+.btn-success {
+  border: 1px solid #1daf4a;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(#000, .2);
+  @include background-image(linear-gradient(#21bc50, #19a945));
+  box-shadow: inset 0 1px 0 #54c877, inset 0 -1px 0 #13953a;
+
+  &:hover,
+  &:focus {
+    border: 1px solid #16953c;
+    @include background-image(linear-gradient(#19a945, #17993e));
+    box-shadow: inset 0 1px 0 #45b266, inset 0 -1px 0 #127a31;
+  }
+
+  &:active {
+    border: 1px solid #1daf4a;
+    color: #ccedd7;
+    @include background-image(linear-gradient(#19a945, #21bc50));
+    box-shadow: inset 0 1px 0 #13953a, inset 0 -1px 0 #54c877;
+  }
+
+  &.disabled,
+  &[disabled] {
+    background: #90dda7;
+    border: 1px solid #80d298;
+    color: #ccedd7;
+    text-shadow: 0 -1px 0 rgba(#000, .12);
+    box-shadow: inset 0 1px 0 #a9e3bb, inset 0 -1px 0 #89ca9c;
+  }
+}
+
+.btn-large {
+  font-size: $btn-large-font-size;
+  line-height: $btn-large-height;
+  padding: 0 floor(0.4 * $btn-large-height);
+}
+
+.btn-group-middle {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}

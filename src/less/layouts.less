@@ -1,0 +1,329 @@
+//
+// Layouts
+// Fixed-width and fluid (with sidebar) layouts
+// --------------------------------------------
+
+
+// Container (centered, fixed-width layouts)
+.container {
+	.container-fixed();
+}
+
+// Fluid layouts (left aligned, with sidebar, min- & max-width content)
+.container-fluid {
+	padding-right: 0px;
+	padding-left: 6px;
+	.clearfix();
+}
+
+//screen without taskbar
+.no-taskbar{
+    left: 0;
+    position: absolute;
+    width: 100%;
+    min-height: calc(~"100% - 78px");
+    padding-top: 20px;
+
+    & > div {
+    	margin: 0 20px;
+    }
+}
+//Logins
+.login-container{
+	min-height: calc(~"100% - 58px");
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.access{
+	width: 452px;
+	margin: auto;
+	padding: 30px 0 74px; // padding-bottom *TEM* que ser o padding-top + 44px;
+}
+.cadastre{
+	width: 550px;
+}
+.cadastre-container{
+	padding-right: 14px !important;
+	form{
+		padding: 0 !important;
+	}
+
+	.form-actions{
+		margin-top: 5px;
+	}
+}
+
+.reset-pw{
+	width: 510px;
+}
+
+.form-actions.dificulties {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	display: inline-block;
+	margin: 8px 0 0;
+	padding: 0;
+
+	.btn, a{
+		margin: 0 9px 0 0 !important;
+	}
+	.btn-primary{
+		padding: 8.5px 11px !important;
+	}
+}
+.form-actions-cadastre{
+	display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 1px;
+
+    a{
+    	margin: 0 0 0 9px !important;
+    	padding: 7.5px 11px !important;
+    }
+
+    .btn, a{
+    	margin-top: 5px !important;
+    	margin-bottom: 1px !important;
+    }
+}
+
+.access-container{
+	background-color: @grayBar;
+	padding: 26px 22px 21px;
+	.box-shadow(~"0 21px 0 -17px #52A2AD inset, 0 1px 1px rgba(0,0,0,.2)");
+	.border-radius(5px);
+
+	.help-inline {
+		position: absolute;
+
+		.loader {
+			margin-top: 2px;
+		}
+	}
+
+	strong{
+		font-weight: bold;
+		font-size: 16px;
+		margin-bottom: 5px;
+		margin-left: 2px;
+	}
+
+	form{
+		padding-right: 11px;
+		margin: 0;
+		input[type="text"], input[type="password"]{
+			width: 100%;
+			margin: 11px 0 0;
+			height: 23px;
+		}
+
+		a{
+			float: right;
+			margin-top: 3px;
+		}
+
+		.links-login{
+			margin-top: 19px;
+			line-height: 2;
+		}
+
+		.btn{
+			padding: 7px 11px;
+			border: 1px solid @qmGrayBorder;
+		}
+
+		fieldset{
+			margin-top: 17px;
+			.control-group{
+				height: 42px;
+				margin-bottom: 16px;
+			}
+			.dificulties{
+				height: auto;
+				line-height: 2;
+			}
+			.control-label{
+				float: left;
+				font-size: 12px;
+				width: 123px;
+				padding-top: 9px;
+				text-align: left;
+				font-weight: bold;
+				margin: 0 9px 0 0;
+
+				&.reset-pw-label{
+					font-weight: normal;
+					margin: 0 -21px 0 0;
+				}
+
+				&.reset-login-label{
+					font-weight: normal;
+					margin: 0;
+					width: 124px;
+				}
+			}
+			hr{
+				margin: 21px 0 7px;
+			}
+
+			.born-date-label{
+				padding-top: 0 !important;
+			}
+
+			.date-form{
+				display: inline-block;
+				height: 42px;
+				width: 381px;
+
+				a{
+					width: 222px !important;
+					margin: 0 8px !important;
+				}
+			}
+
+			input[type="text"] {
+				width: 361px;
+				margin: 0;
+
+				&.born-date{
+					width: 103px;
+					float: left;
+				}
+				&.local{
+					width: 171px;
+					position: relative;
+				}
+				&.reset-login-input{
+					width: 339px !important;
+				}
+			}
+
+			.loader:after {
+				content: url(/static/img/ajax/loader.gif);
+				position: absolute;
+				margin: 9px -20px;
+			}
+
+			input[type="password"] {
+				width: 361px;
+				margin: 0;
+			}
+
+			input[type="radio"]{
+				width: auto;
+				margin: -5px 0 0;
+			}
+
+			.label-radio{
+				font-weight: normal !important;
+				font-size: 12px;
+				float: none;
+				margin: 0 26px 0 4px;
+				width: auto;
+
+			}
+
+			.input-dropdown {
+				display: inline-block;
+				float: left;
+
+				ul{
+					margin: 34px 0 0;
+				}
+				a{
+					color: @qmGrayFontMid;
+					background-color: #FFFFFF;
+					border: 1px solid #BBBBBB;
+					float: left;
+					margin: 0 4px 0 0;
+					padding: 6px 10px 8px 13px;
+					width: 155px;
+				}
+				ul.qm-dropdown-menu li a{
+					width: 180px !important;
+					border: none;
+				}
+			}
+			.local {
+				a{
+					width: 155px !important;
+				}
+			}
+
+			.required-password{
+				margin-right: 6px !important;
+			}
+
+			select{
+				float: left;
+				border: 1px solid #BBBBBB;
+				height: 34px;
+				padding: 6px 10px 8px 2px;
+				width: 372px;
+
+				&.local{
+					width: 180px;
+					margin: 0 10px 0 0;
+				}
+			}
+			.form-actions, .dificulties .form-actions{
+				background: none;
+				border: none;
+				margin: 0;
+				padding: 0;
+				display: inline;
+
+				.btn{
+					float: left;
+					padding: 7.5px 12px;
+				}
+				a{
+					float: left;
+					margin: 0 0 0 9px;
+					padding: 6px 12px;
+				}
+			}
+		}
+
+	}
+}
+
+
+.legend-login{
+	text-align: center;
+	margin-top: 23px;
+	color: @qmagicoGrayFont;
+	font-weight: bold;
+	font-size: 14px;
+	text-shadow: 0 1px @white;
+}
+
+.footer-login{
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	height: 44px;
+	background-color: #E2E2E5;
+	border-top: 1px solid #D9D9D9;
+	.box-shadow(~"0 1px rgba(209,209,209,.4) inset");
+
+	ul{
+		float: right;
+		margin-top: 14px;
+		color: @grayLight;
+		li{
+			display: inline;
+			margin-right: 16px;
+			font-size: 12px;
+
+			&.dot{
+				height: 3px;
+				width: 3px;
+				background-color: @grayLight;
+				vertical-align: middle;
+				display: inline-block;
+			}
+		}
+	}
+}

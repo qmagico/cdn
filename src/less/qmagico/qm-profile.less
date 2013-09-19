@@ -1,0 +1,236 @@
+.qm-profile-page {
+	margin-top: 10px;
+
+	.background {
+		width: 100%;
+		background-position: center !important;
+		.background-size(cover);
+		background-repeat: no-repeat;
+		height: 300px;
+		border: 1px solid @qmGrayBorder;
+		border-width: 1px 0;
+		.box-shadow(0 1px 0 rgba(0,0,0,.12));
+	}
+
+	.profile-photo {
+		display: block;
+		width: 160px;
+		border: 3px solid white;
+		.border-radius(3px);
+		margin: auto;
+		position: relative;
+		top: 20px;
+		.box-shadow(0 1px 1px rgba(0,0,0,.14));
+	}
+
+	.profile-photo .edit {
+		float: left;
+		position: relative;
+		top: -30px;
+		width: 100%;
+		height: 27px;
+		#gradient > .vertical(rgba(0,0,0,0), rgba(0,0,0,1));
+		background-color: transparent;
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		text-shadow: 0 1px 1px rgba(0,0,0,.65);
+		padding-top: 3px;
+	}
+
+	.edit i {
+		margin-right: 5px;
+	}
+}
+
+.qm-profile-page .profile-info {
+	width: 366px;
+	padding: 23px 0 15px;
+	background: white;
+	.border-radius(3px);
+	border-top: 4px solid #52A2AD;
+	margin: auto;
+	.box-shadow(0 2px 1px rgba(0,0,0,.12));
+
+	.name {
+		max-width: 190px;
+		margin-right: 5px;
+		font-size: 16px;
+		font-weight: bold;
+		margin-left: 20px;
+		white-space: nowrap;
+		word-break: break-word;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		vertical-align: baseline;
+	}
+
+	.label {
+		padding: 0 4px;
+		.qm-inline-block;
+		font-size: 12px;
+		line-height: 19px;
+		margin-right: 2px;
+		height: 19px;
+		text-shadow: none;
+	}
+
+	.points {
+		background: #EBAE20;
+	}
+
+	.teacher {
+		background: #52A2AD;
+	}
+
+	.city, .school {
+		display: block;
+		margin: 5px 20px 0;
+		max-width: 300px;
+		white-space: nowrap;
+
+		&:before {
+			content: '';
+			.qm-inline-block;
+			margin-right: 6px;
+			vertical-align: -1px;
+		}
+	}
+
+	.city::before {
+		background: url(/static/img/profile-city-icon.png);
+		width: 14px;
+		height: 12px;
+	}
+
+	.school::before {
+		background: url(/static/img/profile-education-icon.png);
+		width: 16px;
+		height: 12px;
+	}
+}
+
+/// Edit
+
+.qm-edit-profile {
+	background: url(/static/img/background-sandpaper.png);
+}
+
+.qm-edit-profile .edit-photo {
+	.pull-right;
+	width: 160px;
+	padding: 20px 20px 0;
+	font-weight: bold;
+
+	span {
+		text-shadow: 0 1px 0 rgba(255,255,255,.7);
+		color: @qmGrayFontMid;
+		font-size: 14px;
+		display: block;
+	}
+
+	img {
+		width: 160px;
+		height: 160px;
+		border: 1px solid rgba(0,0,0,.3);
+		margin: 10px 0;
+	}
+
+	a {
+		display: block;
+		margin-bottom: 8px;
+		text-shadow: 0 1px 0 rgba(255,255,255,.6);
+		color: #3F848B;
+	}
+}
+
+.qm-edit-profile .edit-info {
+	background: white;
+	margin-right: 201px;
+	.box-shadow(1px 0 1px rgba(0,0,0,.15));
+
+	&>div {
+		height: 50px;
+		line-height: 50px;
+		padding: 0 20px;
+		font-size: 14px;
+		font-weight: bold;
+
+		a {
+			color: #3F848B;
+		}
+	}
+
+	.qm-split-panes {
+		.clearfix;
+		line-height: inherit;
+		height: inherit;
+	}
+}
+
+.qm-edit-profile table {
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+
+	&.edit-access-info td:first-child {
+			border-left: 0;
+			font-weight: bold;
+			width: 173px;
+		}
+
+	tr:nth-child(odd) td {
+		background: #ECECEC;
+	}
+
+	tr:nth-child(even) td {
+		background: @grayBar;
+	}
+
+	tr:last-child td {
+		border-bottom: 0;
+	}
+
+	td {
+		border: 1px solid @qmGrayBorder;
+		padding-left: 15px;
+		font-size: 13px;
+
+		&:first-child {
+			border-left: 0;
+			font-weight: bold;
+			width: 100px;
+		}
+
+		&:nth-child(2) {
+			border-right: 0;
+		}
+	}
+
+	.edit {
+		td {
+			background: #FEF8D3 !important;
+		}
+
+		input {
+			position: relative;
+			top: 4px;
+			left: -5px;
+		}
+
+		a {
+			.qm-inline-block;
+			.border-radius(2px);
+			width: 23px;
+			height: 17px;
+			background: #19A945;
+			position: relative;
+			top: 5px;
+			.box-shadow(~"0 1px 0 rgba(255,255,255,.8), inset 0 1px 0 rgba(0,0,0,.15)");
+		}
+
+		i {
+			margin: 5px auto;
+		}
+	}
+}

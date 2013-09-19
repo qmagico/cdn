@@ -1,0 +1,42 @@
+// The clearfix mixin
+// Fixes the parent's dimensions for floating children
+//
+//   @include clearfix;
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Mixin for various backgrounds
+
+
+// Circle mixin
+//
+//   @include circle($diameter)
+
+@mixin circle($diameter) {
+  width: $diameter;
+  height: $diameter;
+  border-radius: $diameter;
+}
+
+// Border Radius
+@mixin mixin-border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Drop shadows
+@mixin mixin-box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}

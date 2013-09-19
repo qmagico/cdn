@@ -1,0 +1,77 @@
+#qm-caret {
+	.up(@size, @color) {
+		border-style: solid;
+		font-size: 0;
+		border-width: @size;
+		border-color: transparent transparent @color transparent;
+		vertical-align: middle;
+		opacity: 1;
+	}
+
+	.left(@size, @color) {
+		border-style: solid;
+		font-size: 0;
+		border-width: @size;
+		border-color: transparent @color transparent transparent;
+		vertical-align: middle;
+		opacity: 1;
+	}
+
+	.down(@size, @color) {
+		border-style: solid;
+		font-size: 0;
+		border-width: @size;
+		border-color: @color transparent transparent transparent;
+		vertical-align: middle;
+		opacity: 1;
+	}
+
+	.right(@size, @color) {
+		border-style: solid;
+		font-size: 0;
+		border-width: @size;
+		border-color: transparent transparent transparent @color;
+		vertical-align: middle;
+		opacity: 1;
+	}
+}
+
+.qm-inline-block {
+	display:-moz-inline-stack;
+	display:inline-block;
+	.ie7-inline-block();
+}
+
+.qm-justify {
+	text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+.qm-noise-background {
+	background: url(/static/img/background-sandpaper.png) !important;
+}
+
+.no-bg {
+	background-image: none !important;
+}
+
+.qm-noise-bg-white{
+	background-image: url(/static/img/noise-white.png) !important;
+}
+
+.qm-noise-light-bg {
+	background: url(/static/img/light-background-sandpaper.png) !important;
+}
+
+.qm-dark-noise-bg {
+  background-image: url(/static/img/noise-dark.png) !important;
+}
+
+.login-container{
+	background: url(/static/img/light-background-sandpaper.png) !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}

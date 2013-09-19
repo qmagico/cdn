@@ -1,0 +1,124 @@
+.qm-editor {
+	border: 1px solid @qmGrayBorder;
+	border-top: 1px solid #E8E8E8;
+	position: relative;
+
+    // Floating bar over tips
+	.bar {
+        background: @grayBar;
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        border-top: 1px solid @qmGrayBorder;
+        .box-shadow(~"inset 0 1px 0 white");
+	}
+
+    // Fixed bar under answers
+    .bar-answers {
+        background: @grayBar;
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        border-top: 1px solid @qmGrayBorder;
+        .box-shadow(~"inset 0 1px 0 white");
+    }
+
+	.toolbar {
+		background: @grayBar;
+		height: 42px;
+		width: 95%;
+		font-size: 0;
+		border-bottom: 1px solid @qmGrayBorder;
+		margin-bottom: 1px;
+		.box-shadow(~"0 1px #E8E8E8");
+        position: absolute;
+
+		a {
+			.qm-inline-block;
+			width: 26px;
+			border: 1px solid #000;
+			height: 26px;
+			border: 0;
+			margin: 8px 3px !important;
+			background-position: center;
+			background-repeat: no-repeat;
+			.border-radius(5px);
+
+			&:hover {
+				background-color: @grayBar + 20%;
+				.box-shadow(~"0px 1px 1px rgba(0,0,0,.2), inset 0px 1px 0 rgba(0,0,0,.08)");
+			}
+
+			&.bold { background-image: url(/static/img/editor-bold.png); }
+
+			&.italic { background-image: url(/static/img/editor-italic.png); }
+
+			&.underline { background-image: url(/static/img/editor-underline.png); }
+
+			&.align-left { background-image: url(/static/img/left.png); }
+
+			&.align-right { background-image: url(/static/img/right.png); }
+
+			&.align-center { background-image: url(/static/img/center.png); }
+
+			&.align-justify { background-image: url(/static/img/justify.png); }
+
+			&.video { background-image: url(/static/img/editor-video.png); }
+
+			&.link { background-image: url(/static/img/editor-link.png); }
+
+			&.image { background-image: url(/static/img/editor-img.png); }
+
+			&.math { background-image: url(/static/img/editor-math.png); }
+
+			&.bold
+			&.italic, &.underline, &.align-left, &.align-right, &.align-center, &.align-justify, &.video, &.link, &.image, &.math,
+			&.bold, {
+				margin: 8px 0 !important
+			}
+		}
+
+		.sep {
+			.qm-inline-block;
+			width: 1px;
+			border-left: 1px solid #E8E8E8;
+			height: 42px;
+			margin: 0 4px;
+		}
+	}
+
+	.textarea {
+		border: 1px solid white;
+		padding: 10px 10px 0 10px;
+		background: white !important;
+		height: 100%;
+	}
+
+	textarea {
+		display: block;
+		width: 100%;
+		min-height: 60px;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		resize: none;
+		font-size: 12px;
+		color: transparent;
+		text-align: justify;
+		.box-shadow(none);
+	}
+
+    textarea.visible-area {
+        color: initial;
+        margin: 44px 0 0 0;
+        background: white;
+        height: 74px;
+        padding: 5px;
+        resize: vertical;
+        width: calc(~"100% - 10px");
+    }
+
+    .mceLayout {
+        width: 100% !important;
+    }
+}

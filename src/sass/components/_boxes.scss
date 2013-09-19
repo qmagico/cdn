@@ -1,0 +1,17 @@
+.general-box {
+  padding: 15px;
+  background: white;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(#000, 0.2);
+
+  & > .general-box-section:last-child {
+    border-radius: 0 0 3px 3px;
+  }
+}
+
+.general-box-section {
+  background: #f5f5f7;
+  border-top: 1px solid #e8e8e8;
+  box-shadow: inset 0 1px 0 rgba(#fff, .7);
+}

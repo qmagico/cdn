@@ -1,0 +1,1009 @@
+.fluid-box {
+	.box-sizing(border-box);
+    padding: 0px 10px;
+    float: left;
+
+    .qm-folder, .qm-exercise, .qm-video-content, .qm-general-content {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 1130px){
+    .fluid-box{
+        width: 33.33%;
+    }
+}
+
+@media screen and (min-width: 1130px){
+    .fluid-box{
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1450px){
+    .fluid-box{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1780px){
+    .fluid-box{
+        width: 16.66%;
+    }
+}
+
+@media screen and (min-width: 2100px){
+    .fluid-box{
+        width: 14.28%;
+    }
+}
+
+// Hover layer
+.qm-hover-layer {
+	.box-sizing(border-box);
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 25px;
+	min-width: 1164px;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.qm-hover-layer.container-select-serie{
+	overflow-y: hidden;
+}
+
+.qm-hover-layer-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.60);
+	z-index: 4;
+}
+
+//a
+a {
+	color: @qmA;
+}
+// Div titles
+.qm-div-title {
+	border-bottom: 1px solid @qmGrayBorder;
+	.box-shadow(~"inset 0px 1px 0px rgba(255,255,255,.5), 0px 0px 0px rgba(0,0,0,.2)");
+	#gradient > .vertical(#F5F5F7, #EEEEF2);
+	font-weight: bold;
+	padding-left: 15px;
+	line-height: 42px;
+	height: 42px;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: x;
+	text-overflow: ellipsis;
+	position: relative;
+
+	a {
+		color: #3F848B;
+		text-shadow: 0 1px 0 rgba(255,255,255,.70);
+	}
+
+	a {
+		img{
+			margin: 0 7px 0 8px;
+		}
+		.caret{
+			vertical-align: middle;
+		}
+	}
+
+	input{
+		border: 1px solid #BBBBBC;
+		color: #888;
+		height: 24px;
+		width: 331px !important;
+		margin-left: -11px;
+		margin-top: 4px;
+		padding: 4px 11px !important;
+	}
+
+	form{
+		line-height: 48px;
+		img{
+			vertical-align: -3px;
+			margin: 0 0 0 3px;
+		}
+	}
+
+	.btn-success{
+		#gradient > .vertical(#DAF1B7, #C9EB9B);
+		color: @qmGrayFontDark;
+		font-size: 12px;
+		margin-top: 6px;
+		margin-right: 7px;
+		border: 1px solid  @qmagicoGrayBorder !important;
+		.box-shadow(~"0 1px #fff inset, 0 -1px #B5DD7D inset");
+		padding: 5px 10px;
+	}
+
+	.btn{
+		font-size: 12px;
+		margin-top: 6px;
+		margin-right: 7px;
+		border: 1px solid  @qmagicoGrayBorder !important;
+		padding: 5px 10px;
+	}
+}
+
+// Empty search
+.qm-empty-search {
+	.qm-noise-background;
+	text-align: center;
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	color: #666666;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	padding: 20px 0 20px;
+
+	&.border-top {
+		border-top: 1px solid @qmGrayBorder;
+	}
+}
+
+.select-option{
+	color: #777777;
+	font-size: 14px;
+	font-weight: normal;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+
+label.select-option{
+	display: inline;
+}
+
+// Choose div
+.tabbable > .qm-choose-div {
+	border-bottom: 0 !important;
+}
+
+.qm-choose-div {
+	.qm-noise-background;
+	padding: 10px 7px;
+	text-shadow: 0 1px rgba(255, 255, 255, .70);
+	border-bottom: 2px solid @qmGrayBorder;
+	background: #E8E8E8 !important;
+	color: @qmGrayFontMid;
+	font-size: 14px;
+	font-weight: bold;
+	position: relative;
+
+	& > span { 
+		margin: 8px 5px 0 !important;
+		display: block;
+	    float: left;
+	    margin-top: 11px !important;
+	    font-weight: bold;
+	}
+
+	.badge {
+		float: right;
+		font-size: 11px;
+		margin-top: 12px;
+		color: @white;
+		text-shadow: 0 -1px rgba(0,0,0,.25);
+		background-color: @errorText;
+		padding: 0px 4px;
+		position: relative;
+		font-weight: normal;
+	}
+
+	.actual{
+		background-color: #FEF8D3 !important;
+
+		&:before{
+			#qm-caret > .down(4px, @grayDark);
+			content: '';
+			float: right;
+			background-position: center center;
+			background-repeat: no-repeat;
+			margin-top: 18px;
+		}
+	}
+
+	.qm-option {
+		margin: 5px 2px;
+		background-color: @grayBar !important;
+		width: 270px;
+		.box-shadow(1px 1px 0 rgba(210, 210, 210, 0.7));
+		.qm-inline-block;
+		//border: 1px solid @qmGrayBorder;
+		.border-radius(6px);
+		padding: 0 10px;
+		line-height: 32px;
+		text-shadow: 0 1px rgba(255,255,255,.70);
+		color: #3F848B;
+		font-weight: bold;
+		font-size: 12px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		cursor: pointer;
+
+		&:hover { text-decoration: none; }
+
+		&.new {
+			.border-radius(0);
+			.box-shadow(0 0 0);
+			border-color: transparent;
+			outline: 2px dashed @qmGrayBorder;
+			background: url(/static/img/content-empty-back.png);
+			color: @qmGrayFont;
+			padding: 0 10px;
+			height: 38px;
+
+			&:before {
+				content: url(/static/img/class-new-plus.png);
+				float: left;
+				margin-top: 6px;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&.chosen {
+		padding: 7px 7px 6px !important;
+		label {
+			float: left;
+			margin-top: 11px;
+			margin-right: 12px;
+			display: block;
+			font-weight: bold;
+		}
+		.qm-option-container {
+			margin-left: 263px;
+
+			a.qm-option {
+				width: 96%;
+			}
+
+			.qm-dropdown-menu {
+				max-height: 260px;
+				width: inherit !important;
+				overflow: auto;
+				overflow-x: hidden;
+				.badge {
+					float: right;
+					margin: 0;
+				}
+			}
+		}
+
+		.qm-option-container-register {
+			margin-left: 11px;
+
+			.qm-dropdown-menu {
+				height: auto !important;
+				width: inherit !important;
+				.badge {
+					float: right;
+					margin: 0;
+				}
+			}
+		}
+
+		.open .qm-option {
+			background: #FEF8D3;
+		}
+
+		.qm-option {
+			width: auto;
+			color: @qmGrayFontDark !important;
+			display: inline-block;
+			margin: 0;
+			padding: 0 15px;
+			position: relative;
+
+			.change {
+				position: absolute;
+				right: 0;
+				color: #3F848B;
+				margin: 0 7px;
+				position: absolute;
+				right: 15px;
+
+				&:hover { text-decoration: none; }
+
+				&:after {
+					content: '';
+					#qm-caret > .down(4px, @grayDark);
+					margin-left: 10px;
+					vertical-align: 2px;
+				}
+			}
+		}
+	}
+
+	&.no-bg {
+		background-image: none !important;
+	}
+
+	.qm-option-container-performance{
+		margin-left: 117px;
+	}
+
+	.selecter{
+		margin: 0;
+		position: relative;
+		width: 72%;
+		max-width: none;
+
+		&.qm-option {
+
+			margin-left: 122px;
+			overflow: visible;
+			padding: 0 !important;
+		}
+
+		.selecter-selected{
+			font-size: 12px;
+			background-color: @grayBar;
+			padding: 0 40px 0 10px;
+			border: 0;
+		}
+
+		.selecter-options{
+			margin-top: 2px;
+			max-height: none;
+			left: -1px;
+
+			a{
+				text-decoration: none;
+			}
+			.selecter-item {
+				width: inherit - 20px !important;
+				padding: 0 10px;
+				color: #333333;
+			    font-size: 14px;
+			    font-weight: normal;
+			    padding: 0 10px;
+			}
+
+			span.selecter-item {
+			    margin: 2px 2px 0;
+
+			    &:last-child{
+			    	margin: 2px;
+			    }
+			}
+
+		}
+
+
+	}
+	.selecter:hover .selecter-selected, .selecter.open .selecter-selected, .selecter.focus .selecter-selected {
+    	background-color: inherit;
+	}
+}
+
+.qm-choose-div.chosen .styled-select {
+	//display: inline-block;
+	width: initial;
+
+	select {
+		width: 109%;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}
+//Title of qm-choose-div
+.qm-choose-title{
+	margin: 4px 0 17px 12px;
+
+	&:nth-child(2){
+		background-color: red;
+	};
+}
+.statistic{
+	margin-left: 152px !important;
+}
+.choose-group{
+	margin-left: 262px !important;
+}
+
+//displays top and bottom of performance
+.displaying-top{
+	padding: 5px 21px 0;
+	text-shadow: 0 1px rgba(255, 255, 255, .70);
+	color: @qmGrayFontMid;
+	font-size: 13px;
+	font-weight: normal;
+	display: inline-block;
+
+
+	label {
+		display: block;
+		float: left;
+		margin-right: 10px;
+		margin-top: 8px !important;
+	}
+
+	> span {
+		display: block;
+	    float: left;
+	    margin-right: 10px;
+	    margin-top: 7px !important;
+	    font-weight: bold;
+	}
+
+	&:first-child {
+		padding: 5px 0 0 8px;
+		.selecter .selecter-selected{
+			padding: 0 89px 0 13px;
+		}
+	}
+
+	&:nth-child(2) {
+		padding: 5px 0 0 16px;
+
+		label {
+			margin-right: 11px;
+		}
+		.selecter .selecter-selected{
+			padding: 0 63px 0 13px;
+		}
+	}
+
+	&:last-child {
+		padding: 5px 0 0 18px;
+		.selecter .selecter-selected{
+			padding: 0 101px 0 13px;
+		}
+	}
+
+	.selecter{
+		width: auto;
+		background-color: @white;
+		.border-radius(3px);
+
+		.selecter-selected{
+			background-color: #fff;
+			padding: 7px 78px 7px 14px;
+			border: 1px solid @btnBorder;
+			border-top: 1px solid #BBBBBB;
+			.box-shadow(0 1px rgba(0,0,0,.03) inset);
+			.border-radius(3px);
+		}
+		.selecter-options .selecter-item{
+			padding: 8px 10px;
+		}
+	}
+}
+
+.displaying-bottom-box {
+	.clearfix;
+	border-top: 1px solid @qmagicoGrayBorder;
+}
+
+.displaying-bottom{
+	padding: 5px 18px 8px;
+	text-shadow: 0 1px rgba(255, 255, 255, .70);
+	color: @qmGrayFontMid;
+	font-size: 13px;
+	font-weight: bold;
+	float: left;
+
+	&.chosen span {
+		display: inline-block;
+		margin-right: 10px;
+		margin-top: 12px;
+	}
+
+	&:last-child{
+		border-left: 1px solid @qmagicoGrayBorder;
+	}
+
+	.btn{
+		color: #fff;
+		text-shadow: none;
+		margin-top: -3px;
+	}
+//quando entrar as novas classes de botões, essas dependências deverão ser removidas
+.btn-large{
+	padding: 6px 11px 6px 7px;
+}
+.btn-primary{
+	#gradient > .vertical(#6CB9C1, #4AA5AE);
+	.box-shadow(~"0 -1px #418D96 inset, 0 1px rgba(255,255,255, .20) inset !important");
+	border: 1px solid #4CA6AF;
+}
+//fim das dependências a serem removidas
+
+i{
+	margin-top: 2px;
+	margin-right: 3px;
+}
+}
+
+//Title of qm-choose-div
+.qm-choose-title{
+	margin: 4px 0 17px 12px;
+
+	&:nth-child(2){
+		background-color: red;
+	};
+}
+.statistic{
+	margin-left: 152px !important;
+}
+.choose-group{
+	margin-left: 262px !important;
+}
+
+// displaying top my tests
+.displaying-top.my-tests{
+	padding: 5px 6px 0;
+}
+
+ul.qm-dropdown-choose-class {
+	background: white !important;
+	.border-radius(0) !important;
+	padding: 0 !important;
+	border: 1px solid #D9D9D9;
+	margin-left: -16px;
+	margin-top: 4px;
+	top: initial !important;
+	left: initial !important;
+	top: inherit;
+	left: inherit;
+	li {
+		margin: 2px;
+		a {
+			padding: 10px;
+			background: white;
+			font-size: 12px;
+			color: @qmagicoGrayFontDark !important;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: inherit;
+			&:hover { background: #BBDDE2; color: black !important; font-weight: bold; text-shadow: 0 1px 0 rgba(255,255,255,.35);}
+			.badge {
+				float: right;
+				font-size: 11px;
+				margin-top: 2px !important;
+				color: @white;
+				text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+				.box-shadow(1px 1px 0 rgba(0, 0, 0, 0.15));
+				background-color: #F03D25;
+				padding: 0px 4px;
+				font-weight: normal;
+				width: initial !important;
+				width: auto;
+			}
+		}
+		.newClass { color: @qmagicoNames !important; font-weight: bold;}
+	}
+}
+
+// Buttons
+.qm-button {
+	display: block;
+	outline: 1px solid @qmGrayBorder !important;
+	font-weight: bold;
+	font-size: 12px;
+	text-shadow: 0 1px 0 rgba(255,255,255,.70);
+	line-height: 26px;
+	padding: 0 10px;
+	margin-top: 7px;
+	margin-right: 7px;
+	border: 0;
+
+	&.yellow {
+		#gradient > .vertical(#FEF8D3, #F4E0B7);
+		color: #7F4B10 !important;
+		border-top: 1px solid #FFFCED;
+		border-bottom: 1px solid #ECCA82;
+	}
+
+	&.green {
+		#gradient > .vertical(#DAF1B7, #C9EB9B);
+		color: @qmGrayFontDark;
+		border-top: 1px solid @white;
+		border-bottom: 1px solid #B5DD7D;
+	}
+
+	&:hover { text-decoration: none }
+}
+
+// Icon
+.gray-icon{
+	i:after { 
+		background-image: url(/static/img/tab-seq-active-bottom-gray.png) !important;
+		margin-top: -0.5px !important;
+	}
+}
+
+// Search bar
+.qm-searchbar {
+	background: @white;
+	line-height: 48px;
+
+	form { padding: 0; margin: 0; }
+
+	div { margin: 0 45px 0 15px; }
+
+	input[type="text"] {
+		width: 100%;
+		padding: 0;
+		border: 0;
+		.box-shadow(none);
+		font-size: 14px;
+		margin-top: 6px;
+		font-weight: normal;
+		font-color: @qmGrayFontMid;
+	}
+
+	input[type="submit"] {
+		background: url(/static/img/search-icon-blue.png);
+		background-repeat: no-repeat;
+		width: 16px;
+		height: 18px;
+		float: right;
+		border: 0;
+		font-size: 0;
+		margin-top: 15px;
+		margin-right: 15px;
+	}
+}
+
+// Filter bar
+
+.qm-filterbar {
+	background-color: #fff;
+	color: @qmGrayFontMid;
+	font-size: 14px;
+	line-height: 45px;
+	height: 45px;
+	float: right;
+	width: 250px;
+
+	a.filter {
+		display: block;
+		padding-left: 15px;
+		color: #92C1C7;
+		.box-shadow(none) !important;
+
+		&:hover { text-decoration: none; }
+
+		.caret {
+			#qm-caret > .down(4px, @grayDark);
+			float: right;
+			margin: 23px 15px;
+		}
+	}
+
+	&.open {
+		background: #FEF8D3;
+	}
+
+	.qm-dropdown-menu {
+		width: inherit;
+	}
+}
+
+
+// Toolbar
+.qm-toolbar {
+	background: #EDEDED;
+
+	a {
+		.qm-inline-block;
+		margin: 10px;
+	}
+
+	.dropdown {
+		.qm-inline-block;
+	}
+
+	.qm-dropdown-menu {
+		width: auto;
+		margin-left: 2px !important;
+	}
+}
+
+// Checkbox
+
+.qm-checkbox {
+	.qm-inline-block;
+	cursor: pointer;
+	vertical-align: -1px;
+	border: 1px solid @qmGrayBorder;
+	background: @white;
+	.border-radius(3px);
+	.box-shadow(~"0 1px 0 rgba(255,255,255,.3), inset 0 1px 2px rgba(0,0,0,.13)");
+	width: 15px;
+	height: 15px;
+
+	&:before {
+		content: '';
+		background-repeat: no-repeat;
+		background-position: center;
+		float: right;
+		margin: 3px;
+		width: 9px;
+		height: 9px;
+	}
+
+	&.checked::before {
+		background-image: url(/static/img/library-checked.png);
+	}
+
+	&.minus::before {
+		background-image: url(/static/img/library-minus.png);
+	}
+
+	&.green {
+		border: 0 !important;
+		background: url(/static/img/checkbox-checked-green.png) no-repeat;
+		width: 18px;
+		height: 18px;
+		margin: auto;
+	}
+
+	&.green.disabled {
+		border: 0 !important;
+		background: url(/static/img/checkbox-disabled-green.png) no-repeat;
+		width: 18px;
+		height: 18px;
+		margin: auto;
+	}
+
+	&.disabled {
+		border: 0 !important;
+		background: url(/static/img/checkbox-disabled.png) no-repeat;
+		width: 18px;
+		height: 18px;
+		margin: auto;
+	}
+
+	&.small {
+		width: 11px;
+		height: 11px;
+
+		&.disabled {
+			background: url(/static/img/min-checkbox-disabled.png) no-repeat;
+		}
+	}
+
+	&.small::before {
+		width: 7px;
+		height: 6px;
+		margin: 3px 2px;
+	}
+
+	&.small.checked::before {
+		background-image: url(/static/img/library-checked-small.png);
+	}
+
+	i {
+		margin: 3px;
+	}
+}
+
+// Yellow button
+.qm-btn {
+	display: block;
+	float: right;
+	outline: 1px solid @qmGrayBorder !important;
+	font-weight: bold;
+	font-size: 12px;
+	text-shadow: 0 1px 0 @white;
+	line-height: 26px;
+	padding: 0 10px;
+	margin-top: 7px;
+	margin-right: 7px;
+
+	&:hover { text-decoration: none }
+}
+
+.qm-btn.yellow {
+	#gradient > .vertical(#FEF8D3, #F4E0B7);
+	color: #7F4B10 !important;
+	border-top: 1px solid #FFFCED;
+	border-bottom: 1px solid #ECCA82;
+}
+
+.qm-btn.green {
+	#gradient > .vertical(#DAF1B7, #C9EB9B);
+	color: @qmGrayFontDark;
+	border-top: 1px solid @white;
+	border-bottom: 1px solid #B5DD7D;
+	border-right: 0;
+	border-left: 0;
+}
+
+
+// Notification popup
+.qm-popup-notification {
+	width: 292px;
+	height: 58px;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	background: black;
+	.border-radius(5px);
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+
+	&>div {
+		display: table-cell;
+		height: 58px;
+		vertical-align: middle;
+		margin-top: 20px;
+		width: 200px;
+	}
+
+	&::before {
+		content: '';
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-top: 15px;
+		margin-left: 15px;
+		margin-right: 10px;
+		float: left;
+		width: 30px;
+		height: 28px;
+	}
+
+	&.star::before {
+		background-image: url(/static/img/notification-star.png);
+	}
+
+	&.error::before {
+		background-image: url(/static/img/notification-error.png);
+	}
+
+	&.trash::before {
+		background-image: url(/static/img/notification-trash.png);
+	}
+
+	a {
+		float: right;
+		font-size: 16px;
+		font-weight: normal;
+		margin-right: 10px;
+		margin-top: 5px;
+		color: white;
+        cursor: pointer;
+
+		&:hover { text-decoration: none; }
+	}
+}
+
+.qm-number-of-pages{
+	.clearfix;
+	background-color: #fff;
+  	//box-shadow: 0 2px 1px rgba(0, 0, 0, 0.18);
+  	height: 45px;
+  	text-align: center;
+  	padding-bottom: 15px;
+  	width: 100%;
+
+  	.pg-ind {
+  		.qm-inline-block;
+  		ul{
+  			margin: 0px auto;
+  			padding-top: 21px;
+
+  			li {
+  				list-style: none;
+  				float: left;
+
+  				a {
+  					width: 8px;
+  					height: 8px;
+  					.border-radius(8px);
+  					background-color: #D1D1D1;
+  					float: left;
+  					margin: 0px 12px;
+  				}
+  			}
+
+  			li.active a {
+  				background-color: #52A2AD;
+  			}
+  		}
+  	}
+
+  	.jump-pg {
+  		height: 17px;
+  		background-color: #fff;
+  		padding: 14px;
+  		border-left: solid 1px #D1D1D1;
+  		float: right;
+  		color: #52A2AD;
+
+  		a {
+  			color: #52A1AC !important;
+  			text-decoration: none;
+  		}
+
+  		span{
+  			#qm-caret > .down(4px, @grayDark);
+  			margin-left: 15px;
+  		}
+
+  	}
+  }
+  .wordwrap {
+	white-space: normal;
+	word-wrap: break-word; // IE 5+
+}
+
+//inlines
+.inline{
+	display: inline;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.align-center{
+	text-align: center;
+}
+
+//label-radio is used when a input type radio is used and is a label to identify that.
+.label-radio{
+	display: inline-block;
+}
+  .qm-no-background {
+    background-image: none !important;
+    background-color: transparent !important;
+  }
+
+  .qm-no-padding {
+    padding: 0;
+  }
+
+  .qm-no-width {
+    min-width: 0;
+  }
+
+//material box with position: relative; to teachers view
+.material-content{
+	position: relative;
+	display: block;
+
+	.dropdown-menu{
+			min-width: 113px;
+			border: 1px solid #D9D9D9;
+			top: 63px;
+			right: -114px;
+			color: @grayDark;
+			font-weight: bold;
+
+			&.toLeft{
+				right: 30px;
+			}
+		}
+	li{
+		cursor: pointer;
+
+		div{
+			padding: 9px;
+			&:hover{
+				background-color: #BBDCE1;
+			}
+		}
+	}
+}
+
+

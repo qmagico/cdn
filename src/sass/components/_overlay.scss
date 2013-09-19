@@ -1,0 +1,26 @@
+// Disable the body scroll
+.no-scroll {
+  overflow: hidden;
+}
+
+// Overlay
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background: rgba(#000, 0.6);
+  z-index: $overlay-index;
+}
+
+.overlay-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $overlay-inner-index;
+  padding: 15px;
+}

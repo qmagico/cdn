@@ -1,0 +1,16 @@
+// Configuration
+$body-min-width: 960px;
+
+// Colors
+$background-color: #f7f7f9;;
+$link-color: #64a5ac;
+$border-color: #d7d7d7;
+
+$heading-height: 42px;
+
+// z-index organization
+$general-index: 1;
+$taskbar-index: $general-index + 2;
+$dropdown-index: $general-index + 1;
+$overlay-index: $general-index + 2;
+$overlay-inner-index: $overlay-index + 1;

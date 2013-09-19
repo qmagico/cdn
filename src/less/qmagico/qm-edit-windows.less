@@ -1,0 +1,77 @@
+.qm-split-panes {
+	.qm-pane {
+		.qm-inline-block;
+		width: 50%;
+
+		&.left {
+			float: left;
+
+			& > .qm-pane-blue-bar {
+                height: 4px;
+                margin-left: 15px;
+				margin-right: 15px;
+                margin-top: 15px;
+			}
+			& > .qm-pane-library { 
+				margin: 15px;
+			}
+		}
+
+		&.right { 
+			float: right;
+			& > .qm-pane-blue-bar {
+				margin-left: 15px;
+                height: 4px;
+				margin-right: 15px;
+                margin-top: 15px;
+			}
+			& > .qm-pane-library {
+				margin: 15px;
+				min-height: 370px;
+			}
+		}
+
+		.qm-pane-title {
+			margin-left: 15px;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 48px;
+		}
+	}
+
+	.qm-pane-blue-bar {
+		display: block;
+		height: 3px;
+		background: #70B3BC;
+		border: 0 !important;
+		margin: 5px 15px -15px;
+		.border-radius(3px 3px 0 0);
+	}
+}
+
+div.qm-library-component {
+    border: 1px solid @qmGrayBorder;
+    border-top: 0;
+    border-bottom: 0;
+    background: @white;
+    display: block;
+    margin: 15px;
+    min-height: 370px;
+    .border-radius(3px);
+
+    .qm-breadcrumbs-tab {
+        overflow: hidden;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        height: 3px;
+        background: #70B3BC;
+        border: 0 !important;
+    }
+
+    &.qm-trash:before {
+        background: #CC0000 !important;
+    }
+}

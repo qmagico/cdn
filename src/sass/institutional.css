@@ -1,0 +1,372 @@
+/* line 17, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 25, E:/qmagico/sass/components/_icons.scss */
+.icon {
+  font-family: "FontAwesome";
+  -webkit-font-smoothing: antialiased;
+  font-weight: 100 !important;
+  font-size: 16px;
+}
+/* line 29, E:/qmagico/sass/components/_icons.scss */
+.icon:after {
+  vertical-align: middle;
+}
+
+/* line 32, E:/qmagico/sass/components/_icons.scss */
+.icon-search:after {
+  content: "\f000";
+}
+
+/* line 34, E:/qmagico/sass/components/_icons.scss */
+.icon-heart:after {
+  content: "\f004";
+}
+
+/* line 36, E:/qmagico/sass/components/_icons.scss */
+.icon-star:after {
+  content: "\f005";
+}
+
+/* line 38, E:/qmagico/sass/components/_icons.scss */
+.icon-trash:after {
+  content: "\f014";
+}
+
+/* line 40, E:/qmagico/sass/components/_icons.scss */
+.icon-home:after {
+  content: "\f015";
+}
+
+/* line 42, E:/qmagico/sass/components/_icons.scss */
+.icon-ok:after {
+  content: "\f00c";
+}
+
+/* line 44, E:/qmagico/sass/components/_icons.scss */
+.icon-time:after {
+  content: "\f017";
+}
+
+/* line 46, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-left:after {
+  content: "\f060";
+}
+
+/* line 48, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-right:after {
+  content: "\f061";
+}
+
+/* line 50, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-up:after {
+  content: "\f062";
+}
+
+/* line 52, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-down:after {
+  content: "\f063";
+}
+
+/* line 54, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-down:after {
+  content: "\f0d7";
+}
+
+/* line 56, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-up:after {
+  content: "\f0d8";
+}
+
+/* line 58, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-left:after {
+  content: "\f0d9";
+}
+
+/* line 60, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-up:after {
+  content: "\f0d8";
+}
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url('../src/plugins/web/static/fonts/font-awesome.eot');
+  src: url('../src/plugins/web/static/fonts/font-awesome.eot?#iefix') format('eot'), url('../src/plugins/web/static/fonts/fontawesome-webfont.woff') format('woff'), url('../src/plugins/web/static/fonts/fontawesome-webfont.ttf') format('truetype'), url('../src/plugins/web/static/fonts/FontAwesome.otf') format('opentype'), url('../src/plugins/web/static/fonts/fontawesome-webfont.svg') format('svg');
+}
+
+/* line 15, E:/qmagico/sass/_base.scss */
+div,
+ul,
+li {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 80, E:/qmagico/sass/globals/_mixins.scss */
+.clearfix:before, .clearfix:after {
+  content: ' ';
+  display: table;
+}
+/* line 84, E:/qmagico/sass/globals/_mixins.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 23, E:/qmagico/sass/_base.scss */
+.fluid-box-wrapper {
+  float: left;
+  display: inline-block;
+}
+
+/* line 28, E:/qmagico/sass/_base.scss */
+.fixed-size-container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* line 33, E:/qmagico/sass/_base.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 37, E:/qmagico/sass/_base.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 41, E:/qmagico/sass/_base.scss */
+.inner-content {
+  padding: 0 30px;
+}
+
+/* line 46, E:/qmagico/sass/_base.scss */
+.action-button {
+  color: white;
+  border-radius: 3px;
+  display: inline;
+  font-size: 18px;
+  padding: 4px 13px;
+  background-color: #D13722;
+}
+
+/* line 1, E:/qmagico/sass/institutional/partials/_header.scss */
+.header {
+  height: 180px;
+  border-bottom: #CDCDCD;
+  background-color: #EEEEEE;
+}
+
+/* line 1, E:/qmagico/sass/institutional/partials/_menu.scss */
+.nav {
+  height: 50px;
+  padding-top: 20px;
+}
+
+/* line 6, E:/qmagico/sass/institutional/partials/_menu.scss */
+.background-blue {
+  background-color: #2E5156;
+  border-bottom: #274549;
+}
+
+/* line 11, E:/qmagico/sass/institutional/partials/_menu.scss */
+.logo-top {
+  width: 123px;
+  height: 32px;
+}
+
+/* line 16, E:/qmagico/sass/institutional/partials/_menu.scss */
+.header-menu {
+  line-height: 33px;
+  float: right;
+}
+/* line 20, E:/qmagico/sass/institutional/partials/_menu.scss */
+.header-menu li {
+  color: white;
+  border-radius: 3px;
+  display: inline;
+  font-size: 18px;
+  margin-right: 13px;
+  padding: 4px 13px;
+}
+/* line 28, E:/qmagico/sass/institutional/partials/_menu.scss */
+.header-menu li a {
+  color: inherit;
+}
+/* line 32, E:/qmagico/sass/institutional/partials/_menu.scss */
+.header-menu li.active {
+  background-color: #1D3336;
+}
+
+/* line 25, E:/qmagico/sass/components/_icons.scss */
+.icon {
+  font-family: "FontAwesome";
+  -webkit-font-smoothing: antialiased;
+  font-weight: 100 !important;
+  font-size: 16px;
+}
+/* line 29, E:/qmagico/sass/components/_icons.scss */
+.icon:after {
+  vertical-align: middle;
+}
+
+/* line 32, E:/qmagico/sass/components/_icons.scss */
+.icon-search:after {
+  content: "\f000";
+}
+
+/* line 34, E:/qmagico/sass/components/_icons.scss */
+.icon-heart:after {
+  content: "\f004";
+}
+
+/* line 36, E:/qmagico/sass/components/_icons.scss */
+.icon-star:after {
+  content: "\f005";
+}
+
+/* line 38, E:/qmagico/sass/components/_icons.scss */
+.icon-trash:after {
+  content: "\f014";
+}
+
+/* line 40, E:/qmagico/sass/components/_icons.scss */
+.icon-home:after {
+  content: "\f015";
+}
+
+/* line 42, E:/qmagico/sass/components/_icons.scss */
+.icon-ok:after {
+  content: "\f00c";
+}
+
+/* line 44, E:/qmagico/sass/components/_icons.scss */
+.icon-time:after {
+  content: "\f017";
+}
+
+/* line 46, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-left:after {
+  content: "\f060";
+}
+
+/* line 48, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-right:after {
+  content: "\f061";
+}
+
+/* line 50, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-up:after {
+  content: "\f062";
+}
+
+/* line 52, E:/qmagico/sass/components/_icons.scss */
+.icon-arrow-down:after {
+  content: "\f063";
+}
+
+/* line 54, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-down:after {
+  content: "\f0d7";
+}
+
+/* line 56, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-up:after {
+  content: "\f0d8";
+}
+
+/* line 58, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-left:after {
+  content: "\f0d9";
+}
+
+/* line 60, E:/qmagico/sass/components/_icons.scss */
+.icon-caret-up:after {
+  content: "\f0d8";
+}
+
+/* line 7, E:/qmagico/sass/institutional.scss */
+html {
+  font-family: "Lucida Grande", Tahoma, Verdana, Arial;
+  font-size: 12px;
+}
+
+/* line 12, E:/qmagico/sass/institutional.scss */
+body {
+  min-width: 980px;
+  background-color: #f7f7f9;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 19, E:/qmagico/sass/institutional.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 23, E:/qmagico/sass/institutional.scss */
+.noise-bg {
+  background-image: url('../institutional/noise-bg.png');
+}

@@ -1,0 +1,60 @@
+$icon-font: "FontAwesome";
+$icon-search: "\f000";
+$icon-heart: "\f004";
+$icon-star: "\f005";
+$icon-trash: "\f014";
+$icon-home: "\f015";
+$icon-plus: "\f067";
+$icon-ok: "\f00c";
+$icon-time: "\f017";
+$icon-arrow-left: "\f060";
+$icon-arrow-right: "\f061";
+$icon-arrow-up: "\f062";
+$icon-arrow-down: "\f063";
+$icon-caret-down: "\f0d7";
+$icon-caret-up: "\f0d8";
+$icon-caret-left: "\f0d9";
+$icon-caret-right: "\f0da";
+
+@mixin icon-font {
+  font-family: $icon-font;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 100 !important;
+}
+
+.icon {
+  @include icon-font;
+  font-size: 16px;
+
+  &:after { vertical-align: middle; }
+}
+
+.icon-search:after { content: $icon-search; }
+
+.icon-heart:after { content: $icon-heart; }
+
+.icon-star:after { content: $icon-star; }
+
+.icon-trash:after { content: $icon-trash; }
+
+.icon-home:after { content: $icon-home; }
+
+.icon-ok:after { content: $icon-ok; }
+
+.icon-time:after { content: $icon-time; }
+
+.icon-arrow-left:after { content: $icon-arrow-left; }
+
+.icon-arrow-right:after { content: $icon-arrow-right; }
+
+.icon-arrow-up:after { content: $icon-arrow-up; }
+
+.icon-arrow-down:after { content: $icon-arrow-down; }
+
+.icon-caret-down:after { content: $icon-caret-down; }
+
+.icon-caret-up:after { content: $icon-caret-up; }
+
+.icon-caret-left:after { content: $icon-caret-left; }
+
+.icon-caret-up:after { content: $icon-caret-up; }

@@ -1,0 +1,164 @@
+$icon-font: "FontAwesome";
+$icon-search: "\f000";
+$icon-heart: "\f004";
+$icon-star: "\f005";
+$icon-trash: "\f014";
+$icon-home: "\f015";
+$icon-plus: "\f067";
+$icon-ok: "\f00c";
+$icon-time: "\f017";
+$icon-arrow-left: "\f060";
+$icon-arrow-right: "\f061";
+$icon-arrow-up: "\f062";
+$icon-arrow-down: "\f063";
+$icon-caret-down: "\f0d7";
+$icon-caret-up: "\f0d8";
+$icon-caret-left: "\f0d9";
+$icon-caret-right: "\f0da";
+$icon-check: "\f046";
+$icon-pencil: "\f040 ";
+$icon-plus: "\f067";
+$icon-file-text-alt: "\f0f6";
+$icon-file-text: "\F15C";
+$icon-share-alt: "\f064";
+
+//tool bar
+$icon-font: "\f031";
+$icon-color: "\f04d";
+$icon-bold: "\f032";
+$icon-italic: "\f033";
+$icon-underline: "\f0cd";
+$icon-align-left: "\f036";
+$icon-align-center: "\f037";
+$icon-align-right: "\f038";
+$icon-align-justify: "\f039";
+$icon-list-ul: "\f0ca";
+$icon-list-ol: "\f0cb";
+$icon-facetime-video: "\f03d";
+$icon-link: "\f0c1";
+$icon-picture: "\f03e";
+
+
+// social
+$icon-facebook: "\f09a";
+$icon-twitter: "\f099";
+
+$icon-cog: "\f013";
+
+//status correct/wrong
+$icon-remove-sign: "\f057";
+$icon-ok-sign: "\f058";
+
+//status public private
+$icon-lock: "\f023";
+$icon-group: "\f0c0";
+
+//caret
+$icon-caret-left: "\f0d9";
+$icon-caret-up: "\f0d8";
+$icon-caret-right: "\f0da";
+$icon-caret-down: "\f0d7";
+
+@mixin icon-font {
+  font-family: $icon-font;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 100 !important;
+}
+
+.icon {
+  @include icon-font;
+
+  &:after { vertical-align: middle; }
+}
+
+.icon-search:after { content: $icon-search; }
+
+.icon-heart:after { content: $icon-heart; }
+
+.icon-star:after { content: $icon-star; }
+
+.icon-trash:after { content: $icon-trash; }
+
+.icon-home:after { content: $icon-home; }
+
+.icon-ok:after { content: $icon-ok; }
+
+.icon-time:after { content: $icon-time; }
+
+.icon-arrow-left:after { content: $icon-arrow-left; }
+
+.icon-arrow-right:after { content: $icon-arrow-right; }
+
+.icon-arrow-up:after { content: $icon-arrow-up; }
+
+.icon-arrow-down:after { content: $icon-arrow-down; }
+
+.icon-caret-down:after { content: $icon-caret-down; }
+
+.icon-caret-up:after { content: $icon-caret-up; }
+
+.icon-caret-left:after { content: $icon-caret-left; }
+
+.icon-caret-up:after { content: $icon-caret-up; }
+
+.icon-facebook:after { content: $icon-facebook; }
+
+.icon-twitter:after { content: $icon-twitter; }
+
+.icon-check:after { content: $icon-check; }
+
+.icon-pencil:after { content: $icon-pencil; }
+
+.icon-link:after { content: $icon-link; }
+
+.icon-list-ul:after { content: $icon-list-ul; }
+
+.icon-font:after { content: $icon-font; }
+
+.icon-color:after { content: $icon-color; }
+
+.icon-align-right:after { content: $icon-align-right; }
+
+.icon-align-left:after { content: $icon-align-left; }
+
+.icon-align-justify:after { content: $icon-align-justify; }
+
+.icon-underline:after { content: $icon-underline; }
+
+.icon-list-ol:after { content: $icon-list-ol; }
+
+.icon-bold:after { content: $icon-bold; }
+
+.icon-italic:after { content: $icon-italic; }
+
+.icon-align-center:after { content: $icon-align-center; }
+
+.icon-picture:after { content: $icon-picture; }
+
+.icon-facetime-video:after { content: $icon-facetime-video; }
+
+.icon-cog:after { content: $icon-cog; }
+
+.icon-remove-sign:after { content: $icon-remove-sign; }
+
+.icon-ok-sign:after { content: $icon-ok-sign; }
+
+.icon-plus:after { content: $icon-plus; }
+
+.icon-file-text-alt:after { content: $icon-file-text-alt; }
+
+.icon-file-text:after { content: $icon-file-text; }
+
+.icon-share-alt:after { content: $icon-share-alt; }
+
+.icon-caret-left:after { content: $icon-caret-left; }
+
+.icon-caret-up:after { content: $icon-caret-up; }
+
+.icon-caret-right:after { content: $icon-caret-right; }
+
+.icon-caret-down:after { content: $icon-caret-down; }
+
+.icon-lock:after { content: $icon-lock; }
+
+.icon-group:after { content: $icon-group; }
