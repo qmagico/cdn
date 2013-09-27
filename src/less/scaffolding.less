@@ -22,8 +22,14 @@ body {
 a {
   color: @linkColor;
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   color: @linkColorHover;
-  text-decoration: underline;
+}
+
+a.disabled {
+  color: #CCCCCC;
+  cursor: default;
+  outline: none;
 }

@@ -57,20 +57,20 @@
 	overflow-y: hidden;
 }
 
+.radius {
+	.border-radius(0 0 3px 3px);
+}
+
 .qm-hover-layer-bg {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,.60);
+	background: rgba(0,0,0,.80);
 	z-index: 4;
 }
 
-//a
-a {
-	color: @qmA;
-}
 // Div titles
 .qm-div-title {
 	border-bottom: 1px solid @qmGrayBorder;
@@ -87,7 +87,6 @@ a {
 	position: relative;
 
 	a {
-		color: #3F848B;
 		text-shadow: 0 1px 0 rgba(255,255,255,.70);
 	}
 
@@ -954,6 +953,10 @@ ul.qm-dropdown-choose-class {
 
 .inline-block{
 	display: inline-block;
+}
+
+.inline-block-table{
+	display: inline-table;
 }
 
 .align-center{
