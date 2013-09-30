@@ -21,28 +21,24 @@
 }
 
 .exam-previous-link {
-  position: absolute;
-  left: 20px;
-
-  &:after {
-    @include icon-font;
-    content: $icon-caret-left;
-    margin-left: 9px;
-    font-size: 16px;
-    color: $link-color;
-  }
-}
-
-.exam-next-link {
-  position: absolute;
-  right: 20px;
 
   &:before {
     @include icon-font;
-    content: $icon-caret-right;
+    content: $icon-caret-left;
     margin-right: 9px;
     font-size: 16px;
     color: $link-color;
+  } 
+}
+
+.exam-next-link {
+
+  &:after {
+   @include icon-font;
+   content: $icon-caret-right;
+   margin-left: 9px;
+   font-size: 16px;
+   color: $link-color;
   }
 }
 
@@ -344,7 +340,7 @@
   font-size: 14px;
   color: #333;
   text-shadow: 0 1px 0 rgba(#fff, .6);
-  border-bottom: 1px solid #d1d1d1;
+  border-bottom: 1px solid $nav-border-color;
 }
 
 .exam-dialog-time:before {

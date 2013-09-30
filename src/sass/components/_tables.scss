@@ -4,7 +4,7 @@ table{
 }
 
 th {
-  color: #666666;
+  color: $gray-font-mid;
   padding: 0 14px;
   height: 65px;
 }
@@ -20,7 +20,7 @@ tr:nth-child(even) td {
 td {
 
   &:first-child{
-    color: #666666;
+    color: $gray-font-mid;
     text-align: left;
   }
 
@@ -32,7 +32,7 @@ td {
   text-align: center;
 
   img {
-      border: 1px solid #D7D7D7;
+      border: 1px solid $border-color;
       vertical-align: middle;
       margin-right: 11px;
   }
@@ -41,7 +41,7 @@ td {
 // th's titles
 .title-center > th{
   font-size: 13px;
-  color: #666666;
+  color: $gray-font-mid;
   text-align: center;
 }
 

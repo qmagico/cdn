@@ -4,10 +4,15 @@ $background-noise-mid: image-url("backgrounds/noise-mid.png");
 $background-noise-dark: image-url("backgrounds/noise-dark.png");
 $background-mock-hover: image-url("backgrounds/mock-hover.png");
 
+.no-repeat {
+  background-repeat: no-repeat;
+}
+
 
 //bg color
-$bg-white: #FFFFFF;
-$bg-light-cont: #FAFAFB;
+$bg-white: #FFFFFF !important;
+$bg-light-gray: #F7F7F9 !important;
+$bg-light-cont: #FAFAFB !important;
 
 .bg-noise-light {
   background: $background-noise-light repeat;
@@ -21,19 +26,27 @@ $bg-light-cont: #FAFAFB;
   background: $background-noise-dark repeat;
 }
 
+.bg-mid-gray {
+  background-color: #ECECEC;
+}
+
 .bg-mock-hover {
   background: $background-mock-hover repeat;
 }
 
 //bg color
 .bg-white {
-  background-color: $bg-white !important;
+  background-color: $bg-white;
 }
 
 .bg-light-cont {
-  background-color: $bg-light-cont !important;
+  background-color: $bg-light-cont;
+}
+
+.bg-light-gray {
+  background-color: $bg-light-gray;
 }
 
 .no-bg {
-  background: none !important; 
+  background: none repeat scroll 0 0 transparent !important;
 }

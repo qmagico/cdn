@@ -1,0 +1,488 @@
+$txt-to-question: image-url("wizard/txt-to-question.png");
+$link-questions: image-url("wizard/link-questions.png");
+$background-active: #EFEFF2;
+
+
+.questions-list {
+	position: absolute;
+	width: 230px;
+	left: 0;
+	top: 43px;
+	bottom: 0;
+
+	@include clearfix;
+
+}
+
+.question-area {
+	border-left: 1px solid $border-color;
+	border-right: 1px solid $border-color;
+	position: relative;
+	left: 230px;
+	width: calc(100% - 230px);
+	height: 100%%;
+}
+
+.n-questions-title{
+	display: block;
+	font-weight: bold;
+	margin: 15px 15px 14px;
+	font-size: 14px;
+	color: $gray-dark;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.question {
+	padding-left: 15px;
+	padding-right: 4px;
+	height: 41px;
+	line-height: 40px;
+	list-style-type: none;
+	font-size: 13px;
+	color: #3F848B;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	& > span {
+		color: $gray-font;
+		font-weight: bold;
+	}
+
+	& > i{
+		color: $gray-font;
+		vertical-align: middle;
+	}
+
+	&:hover, &.active {
+		background-color: $background-active;
+	}
+
+	& > .remove {
+		background: #BDBDBD;
+		color: white;
+		padding: 3px 4px;
+		margin-top: 16px;
+		margin-right: 7px;
+		-webkit-border-radius: 1px;
+		-moz-border-radius: 1px;
+		border-radius: 1px;
+		line-height: 14px;
+		font-size: 12px;
+		display: none;
+		position: relative;
+		top: -5px;
+	}
+
+	&:hover > .remove {
+		display: block;
+	}
+}
+
+li.question {
+	border-bottom: 1px solid #EFEFF2;
+	cursor: pointer;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+div.question {
+	border: 1px solid #EFEFF2;
+}
+
+.input-serie-name {
+	padding: 7px 12px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C6C6C7 #D8D8D9 #DDDDDE;
+	width: 266px;
+	font-size: 13px;
+	outline: none;
+	@include border-radius(3px);
+}
+
+.wizard-questions-box {
+
+}
+
+.wizard-questions {
+	overflow-y: hidden;
+	position: relative;
+	height: calc(100% - 84px);
+	@include clearfix;
+}
+
+.wizard-container {
+	overflow-y: auto;
+	height: 86%;
+	padding-top: 2px;
+	position: relative;
+	@include clearfix;
+
+	&:before {
+		content: '';
+		@include box-shadow(0 8px 17px 5px rgba(209,209,209,0.5));
+		display: block;
+		position: absolute;
+		top: -12px;
+		width: 100%;
+		z-index: 1;
+	}
+
+	&:after {
+		content: '';
+		@include box-shadow(0 24px 26px 21px #d1d1d1);
+		display: block;
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+	}
+
+	& > .mCustomScrollBox > .mCSB_container {
+		padding-bottom: 18px;
+	}
+}
+
+.permission-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.permission {
+	margin-left: 8px;
+	font-weight: normal;
+
+	& > .icon-group {
+		margin-right: 2px;
+	}
+
+	& > .icon-caret-down {
+		color: #000;
+		margin-left: 4px;
+	}
+
+	& > .icon:after {
+		vertical-align: baseline;
+	}
+}
+
+dl.permission-definition {
+	background-color: #fff;
+	width: 373px;
+	position: absolute;
+	bottom: -133px;
+	z-index: 2;
+	border: 1px solid $light-border;
+	@include box-shadow(0 1px 5px rgba(0,0,0,.20));
+
+	& > a {
+		color: $gray-dark;
+		display: block;
+		padding: 9px 14px;
+		margin: 2px;
+		& > dt {
+			font-size: 13px;
+			line-height: 21px;
+
+			& > i { margin-left: 3px; }
+		}
+
+		& > dd {
+			font-size: 11px;
+			line-height: 14px;
+			font-weight: normal;
+			margin-top: 3px;
+		}
+
+		&:hover {
+			background-color: #BBDDE2;
+		}
+	}
+}
+
+
+.wizard-heading {
+	@include clearfix;
+	background-color: #fff;
+	padding: 12px 11px 16px 15px;
+	position: relative;
+
+	& > .small-h1 {
+		position: relative;
+		top: 3px;
+	}
+}
+
+.wizard-action {
+	padding-left: 14px;
+	padding-right: 0;
+	border-bottom: 1px solid $nav-border-color;
+	@include box-shadow(0 1px 0 #D8D8D8);
+}
+
+.wizard-components {
+	width: 680px;
+	overflow: hidden;
+	border-radius: 3px;
+	background-color: $white;	
+	position: relative;
+	margin: 0 auto 18px;
+	overflow: hidden;
+	border-radius: 3px;
+	@include box-shadow(0 1px 0 rgba(0,0,0,.2));
+}
+
+.component-border {
+	border: 1px solid $border-color;
+	border-width: 0 1px;
+}
+
+.wizard-textarea {
+	@extend .wizard-components;
+	height: 514px;
+
+	& > .mCustomScrollBox {
+		border-radius: 3px;
+
+		& > .mCSB_container {
+			margin: 0px auto;
+			width: 99%;
+		}
+	}
+
+	textarea {
+		@include box-sizing(border-box);
+		font-family: "Lucida Grande", Tahoma, Verdana;
+		font-size: 13px;
+		text-align: justify !important;
+		width: 100%;
+		padding: 17px 20px 20px;
+		resize: none;
+		background: white;
+		border: 0;
+		overflow: hidden;
+	}
+
+}
+
+//wizard container positions
+.ancor-enunciation {
+	top: 6px;
+	transition: 1s all ease;
+}
+
+.ancor-answer {
+	top: -532px;
+	transition: 1s all ease;
+}
+
+.ancor-tip {
+	top: -1019px;
+	transition: 1s all ease;
+}
+
+
+//alternatives
+.alternative {
+	background-color: $card-bg;
+	position: relative;
+	padding: 14.5px 22px;
+	border-bottom: 1px solid $alternative;
+	line-height: 20px;
+	text-align: justify;
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.15), 0 1px #FFF inset);
+
+	&:first-child {
+		margin: 0;
+	}
+
+	&:last-child {
+		@extend .alternative:first-child;
+		border-bottom: 0;
+		padding: 0 9px 0 22px;
+		line-height: 44px;
+		@include box-shadow(0 1px $card-bg);
+	}
+
+	& > .icon {
+		color: #fff;
+		border-radius: 15px;
+		width: 15px;
+		height: 15px;
+		display: inline-block;
+		text-align: center;
+		line-height: 14px;
+		vertical-align: middle;
+
+		&:after {
+			font-size: 11px;
+	    vertical-align: baseline;
+		}
+	}
+
+  & > .icon-ok {
+  	background-color: #19A945;
+  	border: 1px solid #16983E;
+  }
+
+  & > .icon-remove {
+ 	  background-color: #C54A21;
+    border: 1px solid #A63F1C;
+  }
+
+  & > i + i {
+  	margin: 0 8px 0 11px;
+  }
+  & > span {
+  	display: inline-table;
+		width: 89%;
+  }
+
+}
+
+.alternative-content {
+	margin: 0 4.5px;
+}
+
+.add-alternative {
+	font-size: 13px;
+
+	& > .icon-plus {
+		margin-right: 8px;
+
+		&:after {
+			vertical-align: baseline;
+		}
+	}
+}
+
+//convert text to question
+.txt-to-question {
+	background-image: $txt-to-question;
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 18px;
+	display: block;
+}
+
+.link-questions {
+	width: 23px;
+	height: 23px;
+	background-image: $link-questions;
+	background-repeat: no-repeat;
+	margin: 15px 15px 14px 106px;
+	background-position: right center;
+}
+
+//Editor's toolbar
+.toolBar tr > td {
+	@extend .no-border;
+	@extend .no-padding;
+}
+
+table.toolBar  tr td {
+
+	&:first-child {
+		padding-left: 13px;
+
+		& > span {
+			text-shadow: 0 1px $white;
+			font-size: 13px;
+		}
+		a:hover {
+			background-color: inherit;
+			@include box-shadow(none);
+		}
+	}
+
+	.icon-color {
+		margin-left: 3px;
+	}
+	& > a {
+		color: $gray-font-mid;
+		text-align: center;
+	  border-radius: 2px 2px 2px 2px;
+	  display: block;
+	  height: 19px;
+	  margin: 0 3px;
+	  width: 19px;
+	  line-height: 21px;
+
+	  &:hover {
+	  	background-color: $white;
+	  	@include box-shadow(0px 1px 1px rgba(0,0,0,.2), inset 0px 1px 0 rgba(0,0,0,.08));
+	  }
+
+	  &.active {
+	  	background-color: #E1E1E1;
+			@include box-shadow(0 1px 0 rgba(255, 255, 255, 0.3), 0 0 2px rgba(0, 0, 0, 0.2) inset);
+			border: 1px solid;
+			border-color: #B5B5B5 #C3C3C3 #CCCCCC;
+	  }
+	}
+
+	& > span {
+		color: $gray-font-mid;
+	    display: block;
+	    margin-left: 3px;
+	    line-height: 21px;
+	}
+	}
+
+//Tool's separator from toolbar
+.separator {
+	border-left: 1px solid $nav-border-color;
+    display: block;
+    height: 43px;
+    margin: 0 4px;
+    width: 1px;
+}
+
+//Alternatives editor/creator
+
+.alternative-editor {
+	display: inline-table;
+	background: #fff;
+	width: 89.7%;
+	border: 1px solid #E8E8E8;
+	position: relative;
+	@include border-radius(3px);
+
+	& > header {
+		@extend .panel-heading;
+		@extend .no-padding;
+		@include border-radius(3px 3px 0 0);
+		background-color: #F7F7F9;
+		display: inherit;
+		width: 100%;
+	}
+
+	& > footer {
+		@include border-radius(0 0 3px 3px);
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		& > textarea {
+			margin: 0 5px;
+			width: 97%;
+			border: 0;
+			outline: none;
+			resize: none;
+		}
+	}
+
+	&:after {
+		content: '';
+		background-image: image-url("wizard/drag-content-2.png");
+		background-repeat: no-repeat;
+		width: 10px;
+		height: 22px;
+		display: block;
+		position: absolute;
+		right: -22px;
+		top: 35px;
+	}
+}

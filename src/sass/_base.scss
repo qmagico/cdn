@@ -44,3 +44,126 @@ li {
 .pull-right {
   float: right;
 }
+
+.fluid-box {
+	@include box-sizing(border-box);
+    padding: 0;
+    float: left;
+}
+
+.question-fluid-box{
+	@include box-sizing(border-box);
+    padding: 0;
+    float: left;
+}
+
+@media screen and (max-width: 1130px){
+    .fluid-box{
+        width: 33%;
+    }
+
+    .question-fluid-box {
+    	width: 21%;
+    }
+}
+
+@media screen and (min-width: 1130px){
+    .fluid-box{
+        width: 25%;
+    }
+
+    .question-fluid-box {
+    	width: 19%;
+    }
+}
+
+@media screen and (min-width: 1450px){
+    .fluid-box{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1780px){
+    .fluid-box{
+        width: 16.67%;
+    }
+
+    .question-fluid-box {
+    	width: 10.67%;
+    }   
+}
+
+.instant-notify-wraper {
+  position: fixed;
+  bottom: 26px;
+  right: 42px;
+  z-index: 1;
+}
+
+.instant-notify {
+  background-color: #F8F8F8;
+  border: 1px solid #E1E1E1;
+  border-bottom: 1px solid #fff;
+  padding: 15px 9px 13px 14px;
+  position: relative;
+  z-index: 1;
+  @include clearfix;
+  @include border-radius(3px 3px 0 0);
+  @include box-shadow(0 1px #ffffff inset);
+
+  & > .notifications-info {
+    font-size: 12px !important;
+    top: 6px;
+    position: relative;
+    left: 15px;
+
+    & > p {
+      width: 275px;
+    }
+
+    & > p.notification-txt {
+      width: 239px !important;
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: -1px;
+    width: 436px;
+    left: -29px;
+    border-radius: 50%;
+  }
+}
+
+.instant-shadow {
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  display: block;
+  float: left;
+  z-index: 1;
+  border-radius: 50%;
+  bottom: 0px;
+  @include box-shadow(0 1px 33px 2px #000);
+}
+
+.icon-close-visualize {
+  position: absolute;
+  background-color: #fff;
+  color: #92C2C8;
+  font-size: 9px;
+  line-height: 13px;
+  text-align: center;
+  border-radius: 50%;
+  right: 9px;
+  top: 9px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $taskbar-border;
+  cursor: pointer;
+}

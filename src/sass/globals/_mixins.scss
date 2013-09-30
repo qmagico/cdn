@@ -135,3 +135,10 @@
     border-right: none;
   }
 }
+
+@mixin white-space($width) {
+  width: $width;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -1,6 +1,6 @@
 @import "base";
 
-html {
+html, input, select, option {
   font-family: "Lucida Grande", Tahoma, Verdana, Arial;
   font-size: 12px;
 }
@@ -14,10 +14,20 @@ body {
 a {
   color: $link-color;
   text-decoration: none;
+  text-shadow: 0 1px rgba(255,255,255,.7);
+  cursor: pointer;
+}
+
+textarea, input {
+  outline: 0;
 }
 
 .fluid-box-wrapper {
   position: relative;
+}
+.red {
+  background-color: red;
+  color: blue;
 }
 
 @import "partials/taskbar";
@@ -40,6 +50,10 @@ a {
 @import "components/tables";
 @import "components/html";
 @import "components/image-icon";
+@import "components/images";
+@import "components/indication";
+@import "components/performace";
 
 @import "pages/library";
 @import "pages/exam";
+@import "pages/wizard";
