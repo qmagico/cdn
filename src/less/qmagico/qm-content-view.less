@@ -719,6 +719,18 @@
 .qm-content-container .qm-content {
 	min-width: 600px;
 	.border-radius(3px);
+
+  .header.done {
+    .points::before {
+            background-image: url(../img/content-golden-star.png);
+            color: #804B10;
+            width: auto;
+            padding-right: 28px;
+            vertical-align: -7px;
+    }
+  }
+
+
 	.header {
 		height: 50px;
 		padding: 0 20px 0 10px;
@@ -791,7 +803,7 @@
 			background-image: url(../img/content-golden-star.png);
 		}
 
-        &.done .points {
+        &.done .points::before {
             background-image: url(../img/content-golden-star.png);
             color: #804B10;
             width: auto;
