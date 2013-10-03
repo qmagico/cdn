@@ -1,0 +1,20 @@
+.profile-border-radius {
+  @include border-radius(50%);
+}
+.profile-size2 {
+  width: 32px;
+  height: 32px;
+  @extend .profile-border-radius;
+}
+
+.profile-notifications {
+  width: 48px;
+  height: 48px;
+  @extend .profile-border-radius;
+}
+
+.profile-img-info {
+  width: 72px;
+  height: 72px;
+  @extend .profile-border-radius;
+}

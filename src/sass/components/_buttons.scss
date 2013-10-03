@@ -7,11 +7,13 @@ $btn-large-font-size: 14px;
   display: inline-block;
   font-weight: bold;
   font-size: $btn-font-size;
+  font-family: "Lucida Grande", Tahoma, Verdana, Arial;
   line-height: $btn-height;
   cursor: pointer;
   padding: 0 floor(0.4 * $btn-height);
   background-repeat: repeat no-repeat !important;
   border-radius: 3px;
+  margin: 2px;
 
   // Styling for the deafult button
   border: 1px solid #cdcdcd;
@@ -111,4 +113,26 @@ $btn-large-font-size: 14px;
   position: relative;
   margin: 0 auto;
   text-align: center;
+}
+
+/*
+Buttons with "icon-ok" use the classes bellow to add the icon
+
+.btn-ok-left is used to add the icon-ok before the text, and
+.btn-ok-right is to add the icon-ok after the text
+*/
+.btn-ok-left {
+  &:before {
+    @include icon-font;
+    content: $icon-ok;
+    margin-right: 4px;
+  }
+}
+
+.btn-ok-right {
+  &:after {
+    @include icon-font;
+    content: $icon-ok;
+    margin-left: 4px;
+  }
 }

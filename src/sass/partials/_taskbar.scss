@@ -1,15 +1,17 @@
+//taskbar wraper
 .taskbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 62px;
+  height: 54px;
   line-height: 62px;
   background: image-url("backgrounds/taskbar.png");
-  padding: 0 20px 0 30px;
+  padding-left: 20px;
   z-index: $taskbar-index;
 }
 
+//taskbar container
 .taskbar-brand {
   display: block;
   height: 59px;
@@ -22,4 +24,282 @@
     vertical-align: middle;
     margin-right: 10px;
   }
+}
+
+//taskbar profile wraper
+.taskbar-profile {
+  background-image: image-url("backgrounds/taskbar-profile.png");
+  border-left: 1px solid #AED8DD;
+  display: inline-block;
+  height: 54px;
+  float: right;
+  padding: 0 19px 0 13px;
+  position: relative;
+}
+
+//link witch open and close the info profile at taskbar
+//profile image and caret
+.profile-toggle {
+  position: relative;
+  vertical-align: middle;
+  top: -5px;
+  display: inline;
+  overflow: hidden;
+  height: 54px;
+  font-weight: bold;
+  font-size: 14px;
+
+  & > img {
+    vertical-align: inherit;
+    margin-right: 5px;
+  }
+
+  & > .icon-caret-down {
+    color: #000;
+    margin-left: 4px;
+    position: relative;
+
+    &:after {
+      vertical-align: baseline;
+    }
+  }
+}
+
+.profile {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  width: 270px;
+  position: absolute;
+  right: 6px;
+  top: 53px;
+  @include border-radius(3px);
+  @include box-shadow(0 2px 4px rgba(0,0,0,.2));
+
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   16px solid transparent;
+    border-right:  16px solid transparent;
+    border-bottom: 18px solid $border-color;
+    position: absolute;
+    top: -12px;
+    right: 0;
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   15px solid transparent;
+    border-right:  15px solid transparent;
+    border-bottom: 17px solid $background-color;
+    position: absolute;
+    top: -10px;
+    right: 1px;
+  }
+
+  .panel-footer{
+    border-top: 1px solid rgba($border-color, .5);
+  }
+}
+
+.profile-header {
+  @extend .panel-heading;
+  background-color: $background-color;
+  padding: 16px 12px 16px 15px !important;
+  height: auto !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid $border-color;
+}
+
+.profile-info {
+  float: left;
+  margin-left: 18px;
+  color: $gray-dark;
+}
+
+//taskbar notification
+.taskbar-notify {
+  height: 53px;
+  width: 46px;
+  float: right;
+  text-align: center;
+  font-size: 18px;
+  line-height: 54px;
+  position: relative;
+  @include text-shadow(0 1px rgba(255,255,255,.40));
+
+  & > a > .icon-bell-alt {
+    font-size: 22px;
+  }
+}
+
+//when appears a notification(s) to the user it will change the indication-update display from none to block
+.has-notify {
+  & > .icon-bell-alt {
+    color: #3D777D;
+    @include text-shadow(0 1px rgba(0,0,0,.20));
+  }
+  & > .indication-update {
+    display: block;
+    font-weight: bold;
+    text-shadow: none;
+  }
+}
+
+//notification wraper
+.notifications {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  width: 402px;
+  position: absolute;
+  left: -362px;
+  top: 53px;
+  @include border-radius(3px);
+  @include box-shadow(0 2px 4px rgba(0,0,0,.2));
+
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   16px solid transparent;
+    border-right:  16px solid transparent;
+    border-bottom: 18px solid $border-color;
+    position: absolute;
+    top: -12px;
+    right: 0;
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   15px solid transparent;
+    border-right:  15px solid transparent;
+    border-bottom: 17px solid #F0F0F3;
+    position: absolute;
+    top: -10px;
+    right: 1px;
+  }
+
+  & > header {
+    padding: 0 12px 0 15px;
+    @include box-shadow(none);
+    @include border-radius(2px);
+  }
+}
+
+ul.notifications-content {
+  width: 100%;
+  max-height: 267px;
+  overflow-y: auto;
+
+  li {
+    padding: 18px 0 24px 13px;
+    position: relative;
+    border-bottom: 1px solid $taskbar-border;
+    @include clearfix;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+}
+
+li.visualize {
+  background-color: #F2F8F9;
+
+  .icon-visualize {
+    display: block;
+  }
+}
+
+.icon-visualize {
+  position: absolute;
+  background-color: #fff;
+  font-size: 9px;
+  border-radius: 50%;
+  right: 23px;
+  display: block;
+  line-height: 13px;
+  width: 13px;
+  color: #92C2C8;
+  border: 1px solid $taskbar-border;
+  bottom: 9px;
+  display: none;
+}
+
+/*notifications info as "Name", "action"(mencionou voce, aceitou sua requisição, etc.), "Group",
+Comment and the time*/
+.notifications-info {
+  float: right;
+  font-size: 13px;
+  color: $gray-dark;
+  line-height: 16px;
+  width: 324px;
+  text-align: left;
+
+  & > p {
+    width: 283px;
+  }
+
+  & p:last-child {
+    color: $gray-light;
+    font-size: 12px;
+    position: relative;
+    top: 4px;
+  }
+}
+.notification-txt {
+  @include white-space(293px !important);
+  position: relative;
+  padding-right: 4px;
+  height: 16px;
+  color: $gray-dark !important;
+
+  &:before {
+    content: "\""
+  }
+
+  &:after {
+    content: "\"";
+    display: block;
+    position: relative;
+    float: right;
+    bottom: 16px;
+    right: -5px;
+  }
+}
+
+.taskbar-form{
+  float: right;
+  position: relative;
+  top: 10px;
+
+  & * {
+    margin: 0;
+    line-height: 32px;
+  }
+}
+
+.taskbar-button-search {
+  background: #fff;
+  color: #92C2C8;
+  border: 1px solid #AED8DD;
+  border-width: 1px 1px 1px 0;
+  width: 29px;
+  height: 34px;
+  @include border-radius(0 3px 3px 0);
+  @include box-shadow(0 1px rgba(0,0,0,.12) inset);
+}
+
+.taskbar-search {
+  border: 1px solid #AED8DD;
+  border-width: 1px 0 1px 1px;
+  float: left;
+  padding: 0 11px;
+  width: 339px;
+  height: 32px;
+  font-size: 13px;
+  line-height: 17px;
+  @include border-radius(3px 0 0 3px);
+  @include box-shadow(0 1px rgba(0,0,0,.12) inset);
 }

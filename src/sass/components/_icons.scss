@@ -1,5 +1,5 @@
 $icon-font: "FontAwesome";
-$icon-search: "\f000";
+$icon-search: "\f002";
 $icon-heart: "\f004";
 $icon-star: "\f005";
 $icon-trash: "\f014";
@@ -15,6 +15,8 @@ $icon-caret-down: "\f0d7";
 $icon-caret-up: "\f0d8";
 $icon-caret-left: "\f0d9";
 $icon-caret-right: "\f0da";
+$icon-backward: "\f04a";
+$icon-forward: "\f04e";
 $icon-check: "\f046";
 $icon-pencil: "\f040 ";
 $icon-plus: "\f067";
@@ -37,7 +39,7 @@ $icon-list-ol: "\f0cb";
 $icon-facetime-video: "\f03d";
 $icon-link: "\f0c1";
 $icon-picture: "\f03e";
-
+$icon-save: "\f0c7";
 
 // social
 $icon-facebook: "\f09a";
@@ -49,6 +51,10 @@ $icon-cog: "\f013";
 $icon-remove-sign: "\f057";
 $icon-ok-sign: "\f058";
 
+$icon-remove: "\f00d";
+$icon-ok: "\f00c";
+
+
 //status public private
 $icon-lock: "\f023";
 $icon-group: "\f0c0";
@@ -58,6 +64,14 @@ $icon-caret-left: "\f0d9";
 $icon-caret-up: "\f0d8";
 $icon-caret-right: "\f0da";
 $icon-caret-down: "\f0d7";
+
+//toogle
+$icon-plus: "\F067";
+$icon-minus: "\F068";
+
+//taskbar
+$icon-bell-alt: "\f0f3";
+$icon-off: "\f011";
 
 @mixin icon-font {
   font-family: $icon-font;
@@ -101,6 +115,10 @@ $icon-caret-down: "\f0d7";
 
 .icon-caret-up:after { content: $icon-caret-up; }
 
+.icon-caret-right:after { content: $icon-caret-right; }
+
+.icon-backward:after { content: $icon-backward; }
+
 .icon-facebook:after { content: $icon-facebook; }
 
 .icon-twitter:after { content: $icon-twitter; }
@@ -135,13 +153,18 @@ $icon-caret-down: "\f0d7";
 
 .icon-picture:after { content: $icon-picture; }
 
+.icon-save:after { content: $icon-save; }
+
 .icon-facetime-video:after { content: $icon-facetime-video; }
 
 .icon-cog:after { content: $icon-cog; }
 
 .icon-remove-sign:after { content: $icon-remove-sign; }
 
+.icon-remove:after { content: $icon-remove; }
+
 .icon-ok-sign:after { content: $icon-ok-sign; }
+
 
 .icon-plus:after { content: $icon-plus; }
 
@@ -162,3 +185,82 @@ $icon-caret-down: "\f0d7";
 .icon-lock:after { content: $icon-lock; }
 
 .icon-group:after { content: $icon-group; }
+
+.icon-plus:after { content: $icon-plus; }
+
+.icon-minus:after { content: $icon-minus; }
+
+.icon-bell-alt:after { content: $icon-bell-alt; }
+.icon-off:after { content: $icon-off; }
+
+.icon-flip-horizontal:before {
+  @include scale(-1, 1);
+}
+
+//css icons
+.icon-help {
+  @extend .indication-tip;
+  background-color: $link-color !important;
+  color: #fff;
+
+  &:before {
+    content: '?';
+  }
+}
+
+//icons vertical-align properties
+.icon-va-top:after {
+  @extend .va-top;
+}
+
+.icon-va-baseline:after {
+  @extend .va-baseline;
+}
+
+.icon-va-bottom:after {
+  @extend .va-bottom;
+}
+
+.icon-va-inherit:after {
+  @extend .va-inherit;
+}
+
+.icon-va-initial:after {
+  @extend .va-initial;
+}
+
+.icon-va-middle:after {
+  @extend .va-middle;
+}
+
+.icon-va-sub:after {
+  @extend .va-sub;
+}
+
+.icon-va-super:after {
+  @extend .va-super;
+}
+
+.icon-va-text-bottom:after {
+  @extend .va-text-bottom;
+}
+
+.icon-va-text-top:after {
+  @extend .va-text-top;
+}
+
+//font-size of icons in somes places of plataform
+.icon-cog-r-action {
+  font-size: 19px;
+  margin-right: 6px;
+  margin-left: 3px;
+}
+
+.icon-cog-header {
+  color: #92C2C8;
+  font-size: 18px;
+  
+  &:after {
+    vertical-align: bottom;
+  }
+}

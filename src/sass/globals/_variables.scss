@@ -2,11 +2,19 @@
 $body-min-width: 960px;
 
 // Colors
-$background-color: #f7f7f9;;
+$background-color: #f7f7f9;
+$card-bg: #F5F5F7;
 $link-color: #64a5ac;
 $border-color: #d7d7d7;
-
-$heading-height: 42px;
+$gray-font: #999999;
+$gray-font-mid: #666666;
+$heading-height: 44px;
+$white: #ffffff;
+$nav-border-color: #D1D1D1;
+$gray-dark: #333333;
+$gray-light: #777777;
+$gray-mid: #CCCCCC;
+$gray-strong: #AAAAAA;
 
 // z-index organization
 $general-index: 1;
@@ -14,3 +22,11 @@ $taskbar-index: $general-index + 2;
 $dropdown-index: $general-index + 1;
 $overlay-index: $general-index + 2;
 $overlay-inner-index: $overlay-index + 1;
+
+//borders
+$light-border: #D9D9D9;
+$alternative: #E8E8E8;
+$light-panel: #E8E8E8;
+
+//taskbar light
+$taskbar-border: #E1E1E6;

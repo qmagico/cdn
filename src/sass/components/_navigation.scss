@@ -1,5 +1,3 @@
-$nav-border-color: #D1D1D1;
-
 .nav {
   position: absolute;
   left: 0;
@@ -59,4 +57,72 @@ $nav-border-color: #D1D1D1;
   }
 
   &:hover { box-shadow: inset 1px 1px 0 #eee, inset -1px 0px 0 #eee; }
+}
+
+//right action refers to context menus, links, buttons, everything that is floating right with a light gray left border
+.right-actions {
+  border-top-right-radius: 3px;
+  float: right;
+  vertical-align: middle;
+  border-left: 1px solid $border-color;
+  padding: 0 10px 0 11px;
+  position: relative;
+
+  &:last-child {
+    margin-left: 5px;
+  }
+
+  &.selected {
+    & > a {
+      @extend .small-h1;
+      font-size: 13px !important;
+      color: $gray-dark;
+    }
+
+    &:after {
+      content: '';
+      @include rhombus(9px);
+      border: 1px solid $nav-border-color;
+      border-bottom: 0;
+      border-right: 0;
+      @extend .bg-noise-dark;
+      position: absolute;
+      left: 53%;
+      bottom: -5px;
+      margin-left: -5px;
+    }
+  }
+
+  & > a {
+    font-size: 13px;
+    margin-right: 3px;
+
+    & > .icon-save {
+      font-size: 16px;
+    }
+  }
+
+  & > .btn {
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+.panel-right-actions {
+  @extend .right-actions:last-child;
+  padding: 0 8px;
+  &:first-child {
+    padding-right: 0;
+  }
+}
+
+
+// icon margin from notification and profile footer of taskbar
+.taskbar-footer-icon-margin {
+  font-size: 19px;
+  margin: 0 11px;
+
+  &:after {
+    vertical-align: bottom;
+  }
 }

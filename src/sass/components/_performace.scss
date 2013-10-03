@@ -1,0 +1,89 @@
+/*
+It is used to show the students performace
+*/
+
+//performace base
+.performace {
+  display: inline-block;
+  font-size: 14px;
+  color: white;
+  min-width: 47px;
+  margin: auto;
+  line-height: 20px;
+  padding: 2px 0;
+  text-align: center;
+  text-shadow: none;
+  @include border-radius(2px);
+}
+
+.performace-in {
+  margin: 0 5.5px;
+}
+
+.range0 {
+  background-color: #C10500;
+  @extend .performace;
+}
+
+.range1 {
+  background-color: #D73A06;
+  @extend .performace;
+}
+
+.range2 {
+  background-color: #C83402;
+  @extend .performace;
+}
+
+.range3 {
+  background-color: #E37404;
+  @extend .performace;
+}
+
+.range4 {
+  background-color: #F29200;
+  @extend .performace;
+}
+
+.range5 {
+  background-color: #F1C207;
+  @extend .performace;
+}
+
+.range6 {
+  background-color: #C5C90E;
+  @extend .performace;
+}
+
+.range7 {
+  background-color: #A3C80D;
+  @extend .performace;
+}
+
+.range8 {
+  background-color: #82AB0B;
+  @extend .performace;
+}
+
+.range9 {
+  background-color: #50B60C;
+  @extend .performace;
+}
+
+.range-not {
+  @extend .performace;
+  color: #AAAAAB;
+  display: block;
+  width: 100%;
+  font-weight: bolder;
+}
+
+.performace-profile {
+  @extend .performace;
+  background-color: #EBAE20;
+  font-size: 12px;
+  float: left;
+  position: relative;
+  top: -7px;
+  line-height: 14px;
+}
