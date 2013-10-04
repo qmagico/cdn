@@ -1,0 +1,72 @@
+/*componnent notebook classes
+----------------------------------------------//---------------------------------------
+.notebook: is the wraper of notebook. It's position is relative to support the elemnts design that are positioned with
+position:relative, and position:absolute;
+----------------------------------------------//---------------------------------------
+%notebook-text-container: It's the placeholder for the notebook container that will be applied in a textarea;
+----------------------------------------------//---------------------------------------
+.notebook-answer: Extend %notebook-text-container. It's used to answer a question on mock test;
+----------------------------------------------//---------------------------------------
+.notebook-annotation: Extend %notebook-text-container. It's used to make annotations in a content material as video and exsercise
+list;
+
+*/
+
+.notebook {
+  height: 235px;
+  background-color: #fff;
+  position: relative;
+}
+
+%notebook-margin {
+  position: absolute;
+  border: 1px solid #FDB9BB;
+  border-width: 0 1px;
+  top: 0;
+}
+
+.notebook-margin-answer {
+  @extend %notebook-margin;
+  width: 4px;
+  height: 235px;
+  left: 19px;
+
+}
+
+.notebook-margin-annotation {
+  @extend %notebook-margin;
+  width: 4px;
+  left: 19px;
+}
+
+%notebook-text-container {
+  background-image: image-url("notebook/notebook-bg.png");
+  cursor: text;
+
+  & > textarea {
+    background-color: transparent;
+    padding-left: 35px;
+    border: 0;
+    outline: none;
+    resize: none;
+    font-family: Georgia;
+    font-style: italic;
+    line-height: 30px;
+    overflow: hidden;
+  }
+}
+
+.notebook-answer {
+  @extend %notebook-text-container;
+  height: 235px;
+  & > textarea {
+    height: inherit;
+    width: calc(100% - 37px);
+  }
+}
+
+.notebook-annotation {
+  @extend %notebook-text-container;
+  height: 394px;
+  width: 100%;
+}
