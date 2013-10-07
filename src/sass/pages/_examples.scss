@@ -1,0 +1,17 @@
+.examples-title {
+  @include border-radius(3px);
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 10px;
+  margin: 15px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
