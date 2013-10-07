@@ -1,44 +1,68 @@
-/*componnent notebook classes
-----------------------------------------------//---------------------------------------
-.notebook: is the wraper of notebook. It's position is relative to support the elemnts design that are positioned with
-position:relative, and position:absolute;
-----------------------------------------------//---------------------------------------
-%notebook-text-container: It's the placeholder for the notebook container that will be applied in a textarea;
-----------------------------------------------//---------------------------------------
-.notebook-answer: Extend %notebook-text-container. It's used to answer a question on mock test;
-----------------------------------------------//---------------------------------------
-.notebook-annotation: Extend %notebook-text-container. It's used to make annotations in a content material as video and exsercise
-list;
+// component notebook classes
+// ----------------------------------------------//---------------------------------------
+// %notebook-wraper: It's the wraper of notebook placeholder container. It's position is relative to support the elemnts design that are positioned with
+// position:relative, and position:absolute;
+// ----------------------------------------------//---------------------------------------
+// .notebook-wraper-answer: It's extends the %notebook-wraper placeholder and is used on a open answer. There is no fixed height;
+// ----------------------------------------------//---------------------------------------
+// .notebook-wraper-annotation: It's extends the %notebook-wraper placeholder and is used to make annotations about a content. There is no fixed height;
+// ----------------------------------------------//---------------------------------------
+// %notebook-margin: It's the placeholder margin;
+// ----------------------------------------------//---------------------------------------
+// .notebook-margin-answer: It's extends the %notebook-margin placeholder and is used on a open answer notebook and has no height equals 100%
+// because it grows with the content;
+// ----------------------------------------------//---------------------------------------
+// .notebook-margin-annotation: It's extends the %notebook-margin placeholder and is used on a open answer notebook and has no height equals 100%
+// because it grows with the content;
+// ----------------------------------------------//---------------------------------------
 
-*/
+// ----------------------------------------------//---------------------------------------
+// %notebook-text-container: It's the placeholder for the notebook container that will be applied in a textarea;
+// ----------------------------------------------//---------------------------------------
+// .notebook-answer: Extend %notebook-text-container. It's used to answer a question on mock test;
+// ----------------------------------------------//---------------------------------------
+// .notebook-annotation: Extend %notebook-text-container. It's used to make annotations in a content material as video and exsercise
+// list;
 
-.notebook {
-  height: 235px;
+//----------------------------------------------//---------------------------------------
+%notebook-wraper {
   background-color: #fff;
   position: relative;
 }
 
+.notebook-wraper-answer {
+  @extend %notebook-wraper;
+  overflow: hidden;
+}
+
+.notebook-wraper-annotation {
+  @extend %notebook-wraper;
+  height: 235px;
+}
+
+//----------------------------------------------//---------------------------------------
 %notebook-margin {
-  position: absolute;
   border: 1px solid #FDB9BB;
   border-width: 0 1px;
+  position: absolute;
+  width: 4px;
   top: 0;
+  left: 19px;
 }
 
 .notebook-margin-answer {
   @extend %notebook-margin;
-  width: 4px;
-  height: 235px;
-  left: 19px;
+  width: 6px;
+  height: 100%;
+  left: 31px;
 
 }
 
 .notebook-margin-annotation {
   @extend %notebook-margin;
-  width: 4px;
-  left: 19px;
 }
 
+//----------------------------------------------//--------------------------------------
 %notebook-text-container {
   background-image: image-url("notebook/notebook-bg.png");
   cursor: text;
@@ -58,10 +82,12 @@ list;
 
 .notebook-answer {
   @extend %notebook-text-container;
-  height: 235px;
   & > textarea {
-    height: inherit;
-    width: calc(100% - 37px);
+    font-family: "Lucida Grande";
+    font-style: normal;
+    padding:0 19px 0 59px;
+    min-height: 235px;
+    width: calc(100% - 76px);
   }
 }
 
@@ -69,4 +95,12 @@ list;
   @extend %notebook-text-container;
   height: 394px;
   width: 100%;
+}
+//----------------------------------------------//---------------------------------------
+ol.notebook-n-lines {
+  position: absolute;
+  line-height: 30px;
+  text-align: center;
+  padding: 0 11px;
+  color: adjust-lightness($gray-font-mid, 5);
 }
