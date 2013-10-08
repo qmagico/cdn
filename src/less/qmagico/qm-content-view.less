@@ -61,6 +61,17 @@
 		}
 	}
 
+    .done .points {
+        color: #804B10;
+
+        &:before {
+            background: url(../img/content-golden-star.png) center 15px no-repeat;
+            width: 20px;
+            vertical-align: -7px;
+            content: '';
+        }
+    }
+
 	.header .close {
 		line-height: 50px;
 		color: #333333 !important;
@@ -91,6 +102,7 @@
 	footer {
 		.clearfix();
 		padding: 4px 15px 19px;
+		height: 26px;
 
 		& > span, & > a {
 			vertical-align: middle;
@@ -790,14 +802,6 @@
 			background-image: url(../img/content-golden-star.png);
 		}
 
-        &.done .points::before {
-            background-image: url(../img/content-golden-star.png);
-            color: #804B10;
-            width: auto;
-            padding-right: 28px;
-            vertical-align: -7px;
-        }
-
 		.exercise-list ~ .points {
 			border-left: 0;
 		}
@@ -1111,6 +1115,13 @@
 	.qm-checkbox{
 		vertical-align: -3px;
 	}
+}
+
+#popup-select-students {
+	/*min-height: 230px;*/
+	max-height: 530px;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .student-lists {

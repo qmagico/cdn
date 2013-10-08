@@ -10,14 +10,45 @@
   padding: 0 20px;
   width: 100%;
   line-height: 50px;
-  text-align: center;
   font-weight: bold;
   border-bottom: 1px solid rgba($border-color, 0.5);
   position: relative;
+
+  & > .indication-text {
+    vertical-align: 2px;
+  }
+}
+
+.exam-red-head {
+  background-color: red;
 }
 
 .exam-question-title {
   font-size: 18px;
+}
+
+.exam-question-nav > li {
+  background-color: $card-bg;
+  display: inline-block;
+  float: left;
+  @include box-shadow(0 1px rgba(#fff, .5) inset);
+  border: 1px solid rgba($border-color, 0.5);
+  border-width: 0 1px;
+  height: 51px;
+  cursor: pointer;
+
+  & > a {
+    display: inline-block;
+    padding: 0 14px;
+  }
+
+  & + li {
+    border-width: 0 1px 0 0;
+
+    & > a {
+      padding: 0 14px 0 13px;
+    }
+  }
 }
 
 .exam-previous-link {
@@ -25,18 +56,18 @@
   &:before {
     @include icon-font;
     content: $icon-caret-left;
-    margin-right: 9px;
+    margin-right: 2px;
     font-size: 16px;
     color: $link-color;
   } 
 }
 
 .exam-next-link {
-
+  
   &:after {
    @include icon-font;
    content: $icon-caret-right;
-   margin-left: 9px;
+   margin-left: 5px;
    font-size: 16px;
    color: $link-color;
   }
@@ -162,7 +193,6 @@
 
 .exam-mark-for-review {
   cursor: pointer;
-  float: right;
 }
 
 // Right side boxes

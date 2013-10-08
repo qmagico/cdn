@@ -62,13 +62,18 @@
   border-style: solid;;
   border-width: 1px 0;
   line-height: 42px;
+  height: 44px;
   padding-right: 10px;
   @include box-shadow(0 1px #fff inset);
   @include clearfix;
+}
 
-  & > h2 {
-    margin: 0 10px 0 16px;
-  }
+.pannel-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: $gray-font-mid;
+  display: inline;
+  margin: 0 10px 0 16px;
 }
 
 .panel-footer {

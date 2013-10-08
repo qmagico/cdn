@@ -15,6 +15,8 @@ $icon-caret-down: "\f0d7";
 $icon-caret-up: "\f0d8";
 $icon-caret-left: "\f0d9";
 $icon-caret-right: "\f0da";
+$icon-backward: "\f04a";
+$icon-forward: "\f04e";
 $icon-check: "\f046";
 $icon-pencil: "\f040 ";
 $icon-plus: "\f067";
@@ -112,6 +114,10 @@ $icon-off: "\f011";
 .icon-caret-left:after { content: $icon-caret-left; }
 
 .icon-caret-up:after { content: $icon-caret-up; }
+
+.icon-caret-right:after { content: $icon-caret-right; }
+
+.icon-backward:after { content: $icon-backward; }
 
 .icon-facebook:after { content: $icon-facebook; }
 

@@ -20,14 +20,11 @@ a {
 
 textarea, input {
   outline: 0;
+  @include border-radius(3px);
 }
 
 .fluid-box-wrapper {
   position: relative;
-}
-.red {
-  background-color: red;
-  color: blue;
 }
 
 @import "partials/taskbar";
@@ -53,7 +50,9 @@ textarea, input {
 @import "components/images";
 @import "components/indication";
 @import "components/performace";
+@import "components/notebook";
 
 @import "pages/library";
 @import "pages/exam";
 @import "pages/wizard";
+@import "pages/examples";
