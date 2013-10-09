@@ -6,17 +6,15 @@
 }
 
 .header-accordion {
-  @extend .modal-header;
+  @extend .panel-section-header;
   @include border-radius(3px);
-  height: 40px;
-  line-height: 40px;
-  border: none;
+  @include background-image(linear-gradient(#fff, #fff, #fff));
+  @include box-shadow(none);
 }
 
 .header-accordion-gray {
   @extend .header-accordion;
-  @include background-image(linear-gradient(white, #F5F5F7, #EEEEF2));
-  background-color: #F5F5F7;
+  @extend .panel-heading;
 }
 
 .accordion-container {
