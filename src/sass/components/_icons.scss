@@ -65,6 +65,12 @@ $icon-caret-up: "\f0d8";
 $icon-caret-right: "\f0da";
 $icon-caret-down: "\f0d7";
 
+//chevron
+$icon-chevron-left: "\f053";
+$icon-chevron-up: "\f077";
+$icon-chevron-right: "\f054"; 
+$icon-chevron-down: "\f078";
+
 //toogle
 $icon-plus: "\F067";
 $icon-minus: "\F068";
@@ -83,6 +89,23 @@ $icon-off: "\f011";
   @include icon-font;
 
   &:after { vertical-align: middle; }
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    text-decoration: inherit;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    background-image: none;
+    background-position: 0 0;
+    background-repeat: repeat;
+    display: inline;
+    height: auto;
+    line-height: normal;
+    margin-top: 0;
+    vertical-align: baseline;
+    width: auto;
 }
 
 .icon-search:after { content: $icon-search; }
@@ -116,6 +139,22 @@ $icon-off: "\f011";
 .icon-caret-up:after { content: $icon-caret-up; }
 
 .icon-caret-right:after { content: $icon-caret-right; }
+
+.icon-chevron-left:after { content: $icon-chevron-left; }
+
+.icon-chevron-up:after { content: $icon-chevron-up; }
+
+
+
+
+
+.icon-chevron-right:before { content: $icon-chevron-right; }
+
+
+
+
+
+.icon-chevron-down:after { content: $icon-chevron-down; }
 
 .icon-backward:after { content: $icon-backward; }
 
@@ -165,7 +204,6 @@ $icon-off: "\f011";
 
 .icon-ok-sign:after { content: $icon-ok-sign; }
 
-
 .icon-plus:after { content: $icon-plus; }
 
 .icon-file-text-alt:after { content: $icon-file-text-alt; }
@@ -191,6 +229,7 @@ $icon-off: "\f011";
 .icon-minus:after { content: $icon-minus; }
 
 .icon-bell-alt:after { content: $icon-bell-alt; }
+
 .icon-off:after { content: $icon-off; }
 
 .icon-flip-horizontal:before {

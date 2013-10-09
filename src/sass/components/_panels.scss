@@ -15,6 +15,7 @@
   text-shadow: 0 1px 0 rgba(#fff, .7);
   background: linear-gradient(top, #f5f5f7, #eeeef2);
   border-radius: 3px 3px 0 0;
+  @include background-image(linear-gradient(white, #F5F5F7, #EEEEF2));
   @include box-shadow(inset 0 -1px 0 rgba(#e5e5eb, .8), inset 0 1px 0 rgba(#fff, .6));
   @include clearfix;
 }

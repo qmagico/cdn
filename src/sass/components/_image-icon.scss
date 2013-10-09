@@ -4,6 +4,7 @@ $img-trash: image-url("wizard/icon-trash.png");
 $icon-extract-alternative: image-url("wizard/extract-alternative.png");
 $icon-formula: image-url("wizard/icon-formula.png");
 $icon-check-all: image-url("icons/icon-check-all.png");
+$icon-accordion-show: image-url("icons/accordion-show.png");
 
 .icon-in-common {
   @extend .no-repeat;
@@ -48,4 +49,10 @@ $icon-check-all: image-url("icons/icon-check-all.png");
   height: 18px;
   vertical-align: -4px;
   margin-right: 7px;
+}
+
+.icon-accordion-show {
+  background-image: $icon-accordion-show;
+  background-repeat: no-repeat;
+  background-position: center;
 }

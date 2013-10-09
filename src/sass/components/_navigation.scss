@@ -74,7 +74,7 @@
 
   &.selected {
     & > a {
-      @extend .small-h1;
+      @extend .small-title;
       font-size: 13px !important;
       color: $gray-dark;
     }

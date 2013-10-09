@@ -1,0 +1,56 @@
+.accordion {
+  @include clearfix;
+  margin: 7px 0 14px;
+  background-color: #fff;
+  @include border-radius(3px);
+}
+
+.header-accordion {
+  @extend .modal-header;
+  @include border-radius(3px);
+  height: 40px;
+  line-height: 40px;
+  border: none;
+}
+
+.header-accordion-gray {
+  @extend .header-accordion;
+  @include background-image(linear-gradient(white, #F5F5F7, #EEEEF2));
+  background-color: #F5F5F7;
+}
+
+.accordion-container {
+  position: relative;
+  top: -1px;
+  font-size: 13px;
+  border-top: 1px solid adjust-lightness($border-color, .3);
+  @include box-shadow(0 1px #fff inset);
+  @include border-radius(0 0 3px 3px);
+}
+
+//toggle
+.action-toggle {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+
+  & > i {
+    background-color: #fff;
+    border: 1px solid #E8E8E8;
+    display: inline-block;
+    width: 23px;
+    height: 18px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: 3px;
+    text-align: center;
+
+    &:after {
+      vertical-align: -4px;
+    }
+
+    &.icon-accordion-show {
+      vertical-align: -5px;
+    }
+  }
+}

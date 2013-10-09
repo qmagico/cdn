@@ -99,29 +99,42 @@ $library: sprite-map("library/materials/*.png", $library-folderbg-repeat: repeat
 }
 
 // General style of the video, exercise and text
-.material-video, .material-exercise, .material-text {
+
+%materials {
   background: linear-gradient(#88bec6, #62acb5);
   color: #fff;
   text-shadow: 0 1px 0 rgba(#000, .12);
-
-  & > .material-box-bottom {
-    background-position: sprite-position($library, contentbg);
-    text-shadow: 0 1px 0 rgba(#000, .4);
-  }
-
-  &:hover {
+  &:hover, &.active {
     background: linear-gradient(#6badb6, #17828f);
 
     & > .progress {
       background: #003e48;
     }
-
-    & > .material-box-bottom {
-      background-position: sprite-position($library, contentbg-hover);
-    }
   }
 }
 
+.material-video, .material-exercise, .material-text {
+  @extend %materials;
+  & > .material-box-bottom {
+    background-position: sprite-position($library, contentbg);
+    text-shadow: 0 1px 0 rgba(#000, .4);
+  }
+
+  &:hover > .material-box-bottom {
+    background-position: sprite-position($library, contentbg-hover);
+  }
+}
+
+//material-itens refers to the small boxes in a list with the materials. As the teachers screen used to correct write questiond
+///sandbox/new/estude/correcao_professor
+.material-itens {
+  @extend %materials;
+}
+
+.material-enunciation {
+  @extend %ellipsis;
+  padding: 0 16px 0 11px;
+}
 // Include the icons for each type of material
 @each $type in video, exercise, text {
   .material-#{$type} {

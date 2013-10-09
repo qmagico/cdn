@@ -23,4 +23,21 @@
   height: 100%;
   z-index: $overlay-inner-index;
   padding: 15px;
+
+  & > header {
+    @include clearfix;
+    position: relative;
+    height: 86px;
+    margin-bottom: 21px;
+
+    & > .overlay-inner-header {
+      color: #fff;
+      border-bottom: 1px solid #666666;
+      position: absolute;
+      left: -15px;
+      width: calc(100% + 30px);
+      padding: 0 15px 0 15px;
+      @include box-shadow(0 -1px 6px 0 rgba(#000, .3) inset);
+    }
+  }
 }

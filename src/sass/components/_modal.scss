@@ -18,3 +18,57 @@
   box-shadow: 0 1px 0 white;
   border-radius: 3px 3px 0 0;
 }
+
+.itens-header-wraper {
+  @include clearfix;
+  width: 100%;
+  min-width: 715px;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 0 15px; 
+
+  & > i {
+    display: inline-block;
+    vertical-align: 12px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+}
+
+.itens-header-container {
+  position: relative;
+  width: 93%;
+  overflow: hidden;
+  margin: 0 13px;
+  display: inline-block;
+  @include box-shadow(11px 0px 11px -8px #000, -9px 0px 11px -8px #000);
+}
+
+.itens-header {
+  position: relative;
+  @include clearfix;
+
+  & > .fluid-box-wrapper {
+    padding: 0 3.5px;
+    max-width: 232px;
+    @include fluid-boxes(175px, 232px, 30px);
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  .material-box {
+    line-height: 36px;
+    height: 36px;
+
+    & > .progress {
+      top: 33px;
+    }
+  }
+
+  .material-box-top {
+    height: 36px;
+    @extend .ellipsis;
+  }
+}

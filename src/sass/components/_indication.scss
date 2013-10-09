@@ -52,3 +52,10 @@
   height: 11px;
   display: none;
 }
+
+//indication in a overlay
+.indication-text-overlay {
+  @extend .indication;
+  background-color: adjust-lightness(#000, .3);
+  padding: 0 6px;
+}
